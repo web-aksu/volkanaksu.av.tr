@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+	<title>Çalışma Alanlarımız | Volkan Aksu + Partners</title>
+	
+	<meta name="keywords"
+		content="Avukat Volkan Aksu, İstanbul avukat, ceza avukatı, boşanma avukatı, hukuk bürosu, Volkan Aksu">
+	<meta name="description"
+		content="İstanbul merkezli Avukat Volkan Aksu Hukuk Bürosu; ceza hukuku, aile hukuku, boşanma ve miras davalarında uzman avukatlık hizmeti sunar. Güvenilir ve profesyonel destek için bizimle iletişime geçin.">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- FavIcon Link -->
+	<link rel="icon" href="./assets/images/favicon.png" type="image/gif" sizes="16x16">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+
+	<!-- Bootstrap CSS Link -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+
+	<!-- Swiper Slider CSS Link -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/swiper-bundle.min.css">
+
+	<!-- Wow Animation CSS Link -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/animate.css">
+
+	<!-- Main Style CSS Link -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+</head>
+
+<body class="fixed">
+	<div class="main">
+		<!-- Loader Start -->
+		<div class="loader-box">
+			<div class="loader"></div>
+		</div>
+		<!-- Loader End -->
+
+		<!-- Header Start -->
+		<header class="site-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="header-box">
+							<div class="site-branding">
+								<a href="index.html" title="Av. Volkan Aksu">
+									<img src="assets/images/logo.png" width="164" height="47" alt="Av. Volkan Aksu">
+								</a>
+							</div>
+							<div class="header-menu">
+								<nav class="main-navigation">
+									<button class="toggle-button"><span></span></button>
+									<div class="mobile-menu-box">
+										<ul>
+											<li class="linkCAT ">
+												<a href="index.html">Ana Sayfa</a>
+											</li>
+							
+											<li class="linkCAT active">
+												<a href="calisma-alanlarimiz.html">Çalışma Alanlarımız</a>
+											</li>
+							
+							
+							
+							
+							
+											<li class="linkCAT">
+												<a href="ekibimiz.html">Ekibimiz</a>
+											</li>
+											
+											<li class="linkCAT">
+												<a href="blog.html">Blog</a>
+											</li>
+											<li class="linkCAT">
+												<a href="iletisim.html">İletişim</a>
+											</li>
+										</ul>
+										<div class="for-mob">
+											<div class="header-mob-btn">
+												<a href="giris.html" class="sec-btn"><span>Giriş Yap</span></a>
+											</div>
+										</div>
+									</div>
+								</nav>
+								<div class="header-btn">
+									<a href="giris.html" class="sec-btn"><span>Giriş Yap</span></a>
+								</div>
+								<div class="lang-button">
+									<a>
+										<img width="10" height="10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/1280px-Flag_of_Turkey.svg.png" alt="turkey" /> TR
+									</a>
+									<div class="lang-button-selector">
+										<!-- <a href="az/index.html">
+											<img width="10" height="10" src="https://img.icons8.com/color/48/azerbaijan.png" alt="azerbaijan" /> AZ
+										</a> -->
+										<a href="en/our-practice-areas.html">
+											<img width="10" height="10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" alt="great-britain" /> EN
+										</a>
+									</div>
+								</div>
+								<div class="black-shadow"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- Header End -->
+
+		<!-- Banner Start -->
+		<section class="main-banner" style="height: auto;">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<div class="banner-content">
+							
+							<h1 style="color: #fff;" class="h1-title wow fadeup-animation" data-wow-duration="0.8s"
+								data-wow-delay="0.2s">
+								Çalışma Alanlarımız
+							</h1>
+							
+		
+		
+						</div>
+					</div>
+		
+				</div>
+			</div>
+		
+		
+		</section>
+		<!-- Banner End -->
+	
+
+
+		<style>
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 999;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.603);
+			
+			justify-content: center;
+			align-items: center;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+	
+		.modal.show {
+			display: flex;
+			opacity: 1;
+		}
+	
+		.modal-content {
+			background: #fff;
+			backdrop-filter: blur(5px);
+			padding: 30px;
+			border-radius: 4px;
+			color: #111;
+			width: 90%;
+			max-width: 600px;
+			max-height: 80vh;
+			overflow-y: auto;
+			position: relative;
+			animation: fadeInUp 0.3s ease;
+			box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+		}
+	
+		#modalDesc p{
+			color: #353535;
+		}
+		#modalDesc{
+			color: #353535;
+		}
+	
+		.close {
+			position: absolute;
+			right: 20px;
+			top: 15px;
+			font-size: 28px;
+			cursor: pointer;
+			color: #000;
+			transition: 0.2s;
+		}
+	
+		.close:hover {
+			color: #000;
+			transform: scale(1.2);
+		}
+	
+		@keyframes fadeInUp {
+			from {
+				transform: translateY(20px);
+				opacity: 0;
+			}
+	
+			to {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+	
+		@media (max-width: 600px) {
+			.modal-content {
+				padding: 20px;
+				max-height: 80vh;
+			}
+	
+			.close {
+				right: 10px;
+				top: 5px;
+			}
+		}
+
+		.pro-l:hover{
+			cursor: pointer;
+		}
+	</style>
+
+
+		<section style="margin-bottom: 25px;">
+			<div class="container col-12">
+				<div class="alinksw col-12 col-lg-6">
+		
+						<a class="pro-l" data-title="Aile Hukuku" data-desc="
+					  <p>Aile hukuku, yalnızca hukuki bir alan değil, aynı zamanda sosyal ve insani boyutu güçlü bir alandır. Boşanma, velayet, nafaka, mal paylaşımı ve soybağı davalarında, müvekkillerimizin hem hukuki hem de duygusal ihtiyaçlarını gözeten bir yaklaşım benimsiyoruz.</p>
+					  <p>Özellikle çocukların üstün yararı, aile hukuku uyuşmazlıklarında temel önceliğimizdir. Velayet ve kişisel ilişki düzenlemelerinde çocuğun psikolojik ve sosyal gelişiminin korunması için gerekli hukuki adımlar atılır. Boşanma süreçlerinde ise tarafların haklarını koruyacak, olası anlaşmazlıkları en aza indirecek çözümler üretilir.</p>
+					  <p>Büromuz, dava yoluna başvurmadan önce arabuluculuk ve uzlaşma gibi dostane çözüm yöntemlerini de gündeme getirir. Ancak uyuşmazlıkların yargıya taşınması halinde, müvekkillerimizin haklarını kararlılıkla savunarak en adil sonuca ulaşmaları için kapsamlı bir hukuki temsil sunar.</p>
+					">Aile Hukuku</a>
+
+					<a class="pro-l" data-title="Arabuluculuk" data-desc="
+					  <p>Arabuluculuk, taraflar arasında ortaya çıkan hukuki uyuşmazlıkların, mahkeme sürecine gerek kalmadan dostane bir şekilde çözüme kavuşturulmasını amaçlayan alternatif bir uyuşmazlık çözüm yoludur. Büromuz, hem zorunlu hem de ihtiyari arabuluculuk süreçlerinde müvekkillerine profesyonel destek sunmaktadır.</p>
+					  <p>Ticari uyuşmazlıklar, işçi-işveren ilişkileri, tüketici şikayetleri, kira ve ortaklık anlaşmazlıkları gibi geniş bir alanda uzmanlaşmış olan ekibimiz, tarafların menfaatlerini gözeten, adil ve kalıcı çözümler üretmeyi hedeflemektedir.</p>
+					  <p>Arabuluculuk sürecinde, tarafların iletişimini kolaylaştırıyor, gizlilik esasına dayalı güvenli bir ortamda anlaşma sağlanmasına katkı sunuyoruz. Zaman ve maliyet avantajı sağlayan bu süreçte, müvekkillerimizin haklarını koruyarak en verimli sonucu elde etmeye odaklanıyoruz.</p>
+					">Arabuluculuk</a>
+					
+					<a class="pro-l" data-title="Birleşme ve Devralmalar" data-desc="
+					  <p>Şirketlerin büyüme ve yeniden yapılanma süreçlerinde en önemli adımlardan biri birleşme ve devralma işlemleridir. Bu süreçler, yalnızca şirketlerin mali tablolarının incelenmesinden ibaret olmayıp, aynı zamanda hukuki risklerin tespiti, sektörel düzenlemelere uyum ve ticari stratejilerin doğru belirlenmesi açısından büyük önem taşır.</p>
+					  <p>Büromuz, birleşme ve devralma işlemlerinde müvekkillerine kapsamlı hukuki destek sağlamaktadır. Bu kapsamda due diligence (hukuki inceleme) süreçleri yürütülmekte, alıcı veya satıcı tarafın çıkarlarını koruyacak şekilde sözleşmeler hazırlanmakta ve müzakereler titizlikle takip edilmektedir. Özellikle karmaşık yapıya sahip çok uluslu işlemlerde, hem yerel mevzuata hem de uluslararası düzenlemelere uyum sağlanması için detaylı bir danışmanlık verilmektedir.</p>
+					  <p>Müvekkillerimizin stratejik hedeflerine uygun bir yol haritası oluşturularak, işlemlerin güvenli, hızlı ve etkin şekilde tamamlanması sağlanır. Rekabet Kurumu ve diğer düzenleyici otoriteler nezdinde yapılması gereken bildirimler ve izinler de tarafımızca takip edilerek sürecin her aşaması hukuki güvence altına alınır.</p>
+					">Birleşme ve Devralmalar</a>
+					<a class="pro-l" data-title="Ceza Hukuku" data-desc="
+					  <p>Ceza hukuku, bireylerin temel hak ve özgürlüklerini doğrudan ilgilendiren en kritik hukuk dallarından biridir. Büromuz, ceza yargılamasının tüm aşamalarında müvekkillerinin yanında yer almakta; soruşturma, kovuşturma ve temyiz süreçlerinde etkili bir savunma stratejisi geliştirmektedir.</p>
+					  <p>Ekonomik suçlar, bilişim suçları, şirket yöneticilerinin sorumlulukları veya kişisel suçlar gibi geniş bir yelpazede uzmanlık sunmaktayız. Müvekkillerimizin karşı karşıya kaldığı iddialar, deliller ve usul işlemleri en ince ayrıntısına kadar incelenmekte; haksız suçlamalara karşı etkin bir savunma yapılmaktadır.</p>
+					  <p>Ayrıca, mağdur konumundaki müvekkillerin haklarının korunması da büromuzun öncelikli hizmetleri arasındadır. Bu kapsamda, suçtan doğan zararların tazmini için hukuki girişimlerde bulunulmakta ve adaletin en etkin biçimde sağlanması hedeflenmektedir.</p>
+					">Ceza Hukuku</a>
+					<a class="pro-l" data-title="Gayrimenkul Hukuku" data-desc="
+					  <p>Gayrimenkul hukuku, taşınmaz mallarla ilgili her türlü hukuki işlemi kapsar. Büromuz, gayrimenkul alım satımından kentsel dönüşüm projelerine kadar uzanan geniş bir yelpazede danışmanlık hizmeti sunmaktadır.</p>
+					  <p>Tapu iptal ve tescil davaları, kat mülkiyeti uyuşmazlıkları, kira ilişkileri, arsa payı karşılığı inşaat sözleşmeleri ve müteahhit alacakları konularında deneyim sahibiyiz.</p>
+					  <p>Hedefimiz, gayrimenkul yatırımlarının hukuka uygun şekilde yürütülmesini sağlamak, olası uyuşmazlıklarda müvekkillerimizin haklarını en etkin biçimde korumaktır.</p>
+					">Gayrimenkul Hukuku</a>
+
+										<a class="pro-l" data-title="İcra ve İflas Hukuku" data-desc="
+					  <p>Ticari ilişkilerde en sık karşılaşılan sorunlardan biri alacakların tahsil edilememesidir. Büromuz, alacaklıların haklarını en kısa sürede elde edebilmeleri için icra takiplerini etkin bir şekilde yürütmektedir. Bunun yanında, borçlu müvekkiller için de borçların yeniden yapılandırılması ve konkordato gibi yasal imkanlardan yararlanılması konusunda hukuki destek sağlamaktayız.</p>
+					  <p>İcra ve iflas süreçleri yalnızca dava aşamasından ibaret olmayıp, aynı zamanda önleyici danışmanlık hizmetlerini de kapsamaktadır. Müvekkillerimizin ticari ilişkilerini güvence altına almak için sözleşmelere koyulacak teminat hükümleri, ipotek ve rehin işlemleri gibi önleyici tedbirler hakkında da danışmanlık verilmektedir.</p>
+					  <p>Büromuz, iflas erteleme, tasfiye ve konkordato gibi süreçlerde şirketlerin varlıklarını korumaya yönelik hukuki çözümler üretir. Hedefimiz, müvekkillerimizin ekonomik kayıplarını en aza indirerek sürdürülebilir bir ticari dengeyi korumalarına yardımcı olmaktır.</p>
+					">İcra ve İflas Hukuku</a>
+					
+					<a class="pro-l" data-title="İş Hukuku" data-desc="
+					  <p>İş hukuku, işçi ile işveren arasındaki ilişkiyi düzenleyen ve çalışma yaşamının temelini oluşturan bir hukuk dalıdır. Büromuz, işçi ve işveren tarafına yönelik her türlü hukuki süreçte profesyonel destek sağlamaktadır.</p>
+					  <p>Haksız fesih, kıdem ve ihbar tazminatı, fazla mesai, mobbing, işe iade davaları, sözleşme düzenlemeleri ve SGK uyuşmazlıkları gibi alanlarda deneyimli ekibimizle temsil hizmeti sunuyoruz.</p>
+					  <p>Amacımız, iş barışını koruyarak hem çalışan hem de işverenin haklarını dengeleyen adil bir çözüm üretmektir. Uyuşmazlıkların önleyici hukuk çerçevesinde en verimli şekilde çözüme kavuşturulmasına özen gösteriyoruz.</p>
+					">İş Hukuku</a>
+					<a class="pro-l" data-title="Kira Hukuku" data-desc="
+					  <p>Kira hukuku, kiracı ve kiraya veren arasındaki sözleşmeden doğan hak ve yükümlülükleri düzenler. Büromuz, hem konut hem de işyeri kiralamalarında tarafların menfaatlerini koruyacak hukuki danışmanlık sunmaktadır.</p>
+					  <p>Kira sözleşmelerinin hazırlanması, yenilenmesi, kira bedelinin tespiti, tahliye davaları, uyarlama ve kira bedelinin artırımı davaları gibi alanlarda etkin şekilde hizmet vermekteyiz.</p>
+					  <p>Hedefimiz, taraflar arasındaki sözleşme ilişkisini sağlam bir zemine oturtmak, olası anlaşmazlıkları önceden engellemek ve uyuşmazlık halinde en kısa sürede çözüm sağlamaktır.</p>
+					">Kira Hukuku</a>
+					<a class="pro-l" data-title="Miras Hukuku" data-desc="
+										  <p>Miras hukuku, bir kimsenin ölümünden sonra malvarlığının kimlere ve nasıl geçeceğini düzenleyen hukuk dalıdır. Bu alan, aile bireyleri arasında sıklıkla uyuşmazlık konusu haline geldiği için titizlikle yürütülmesi gereken bir süreçtir.</p>
+										  <p>Büromuz, mirasın paylaşımı, vasiyetname hazırlanması ve uygulanması, miras sözleşmeleri, saklı payın ihlali, tenkis davaları ve mirasın reddi gibi konularda müvekkillerine kapsamlı hukuki destek sunmaktadır.</p>
+										  <p>Amacımız, aile içi anlaşmazlıkların önüne geçerek, mirasın adil ve hukuka uygun şekilde paylaşılmasını sağlamaktır. Süreç boyunca müvekkillerimizin haklarını korur, hızlı ve kalıcı çözümler üretiriz.</p>
+										">Miras Hukuku</a>
+					<a class="pro-l" data-title="Rekabet Hukuku" data-desc="
+					  <p>Rekabet hukukuna uyum, şirketlerin hem yerel hem de küresel pazarda faaliyetlerini sürdürebilmesi için kritik öneme sahiptir. Büromuz, rekabet kuralları çerçevesinde inceleme, soruşturma ve dava süreçlerinde müvekkillerini temsil etmektedir.</p>
+					  <p>Şirket birleşmeleri ve devralmalarında Rekabet Kurumu’na yapılacak bildirimler, hâkim durumun kötüye kullanılması, kartel anlaşmaları ve haksız rekabet davaları gibi konularda uzmanlık sunuyoruz. Ayrıca, şirketlerin rekabet mevzuatına uyum sağlamaları için iç denetim süreçleri ve eğitim programları da hazırlıyoruz.</p>
+					  <p>Amacımız, müvekkillerimizin ticari faaliyetlerini rekabet hukuku çerçevesinde güvence altına almak, olası idari yaptırımlardan kaçınmalarını sağlamak ve piyasada adil rekabet ortamının korunmasına katkıda bulunmaktır.</p>
+					">Rekabet Hukuku</a>
+
+
+							<a class="pro-l" data-title="Sigorta Hukuku" data-desc="
+												  <p>Sigorta hukuku, sigorta sözleşmelerinden doğan hak ve borçların belirlenmesini düzenleyen önemli bir hukuk alanıdır. Büromuz, hem sigortalıların hem de sigorta şirketlerinin taraf olduğu uyuşmazlıklarda kapsamlı hukuki hizmet sunmaktadır.</p>
+												  <p>Sigorta tazminat davaları, poliçe iptali, riziko değerlendirmesi, hasar tespiti ve rücu davaları gibi konularda uzman ekibimizle müvekkillerimizi temsil ediyoruz.</p>
+												  <p>Amacımız, sigorta sözleşmesinden doğan hakların korunması ve müvekkillerimizin uğradığı zararların eksiksiz şekilde tazmin edilmesidir.</p>
+												">Sigorta Hukuku</a>
+				
+					
+
+					
+					<a class="pro-l" data-title="Ticaret Hukuku" data-desc="
+					  <p>Ticaret hayatı, gerek şirketlerin kuruluş aşamasında gerekse faaliyetlerini sürdürürken çok sayıda hukuki düzenlemeye tabidir. Büromuz, ticaret hukukunun tüm alanlarında müvekkillerine hem önleyici danışmanlık hem de uyuşmazlık çözümü hizmetleri sunmaktadır.</p>
+					  <p>Şirket kuruluşları, hisse devirleri, yönetim kurulu kararları, ticari defterlerin tutulması gibi konularda hukuki rehberlik sağlıyoruz. Ticari sözleşmelerin hazırlanması, müzakeresi ve uygulanması süreçlerinde müvekkillerimizin menfaatlerini koruyacak şekilde hareket ediyoruz. Özellikle distribütörlük, bayilik, tedarik, ortaklık ve franchise sözleşmeleri gibi ticari hayatın temelini oluşturan anlaşmalarda detaylı hukuki destek verilmektedir.</p>
+					  <p>Uyuşmazlık halinde ise, ticari davalarda müvekkillerimizi temsil ederek haklarının korunması için gerekli tüm yargı yollarına başvuruyoruz. Amacımız, ticari faaliyetlerin kesintisiz ve güven içinde sürdürülmesini sağlamak ve müvekkillerimizin rekabet gücünü artırmaktır.</p>
+					">Ticaret Hukuku</a>
+
+
+					
+
+
+					
+
+					
+
+
+					
+					
+					
+					
+
+		
+					
+		
+				</div>
+			</div>
+		</section>
+
+
+
+		
+		<!-- Modal -->
+		<div id="modalBox" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h2 id="modalTitle"></h2>
+				<p id="modalDesc"></p>
+			</div>
+		</div>
+		
+		
+		
+		<script>
+			const links = document.querySelectorAll('.pro-l');
+			const modal = document.getElementById('modalBox');
+			const modalTitle = document.getElementById('modalTitle');
+			const modalDesc = document.getElementById('modalDesc');
+			const closeBtn = document.querySelector('.close');
+
+			links.forEach(link => {
+				link.addEventListener('click', (e) => {
+					e.preventDefault();
+					modalTitle.textContent = link.dataset.title;
+					modalDesc.innerHTML = link.dataset.desc;
+					modal.classList.add('show');
+				});
+			});
+
+			closeBtn.addEventListener('click', () => {
+				modal.classList.remove('show');
+				setTimeout(() => modal.style.display = 'none', 300);
+			});
+
+			window.addEventListener('click', (e) => {
+				if (e.target === modal) {
+					modal.classList.remove('show');
+					setTimeout(() => modal.style.display = 'none', 300);
+				}
+			});
+
+			const observer = new MutationObserver(() => {
+				if (modal.classList.contains('show')) {
+					modal.style.display = 'flex';
+				}
+			});
+			observer.observe(modal, { attributes: true });
+		</script>
+
+
+	
+
+		<!-- Footer Start -->
+		<footer class="site-footer">
+			
+			
+			<div class="container">
+				<div class="footer-top">
+					<div class="row">
+						<div class="col-lg-3">
+							<div class="footer-info">
+								<h4 class="h4-title footer-title">Sosyal</h4>
+								
+								<div class="social-media">
+									<a href="https://facebook.com" title="Follow on Facebook" target="_blank"><i
+											class="fab fa-facebook-f" aria-hidden="true"></i></a>
+									<a href="https://instagram.com" title="Follow on Instagram" target="_blank"><i
+											class="fab fa-instagram" aria-hidden="true"></i></a>
+									<a href="https://linkedin.com" title="Follow on LinkedIn" target="_blank"><i
+											class="fab fa-linkedin-in"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-6 col-md-3">
+							<div class="footer-link-wp">
+								<div class="footer-link">
+									<h4 class="h4-title footer-title">Menü</h4>
+									<ul>
+										<li>
+											<a href="index.html" title="Home">Ana Sayfa</a>
+										</li>
+										<li>
+											<a href="hakkimizda.html" title="About Us">Hakkımızda</a>
+										</li>
+										<li>
+											<a href="calisma-alanlarimiz" title="Services">Çalışma Alanlarımız</a>
+										</li>
+										
+										<li>
+											<a href="blog.html" title="Blog">Blog</a>
+										</li>
+										<li>
+											<a href="iletisim.html" title="Contact Us">İletişim</a>
+										</li>
+										<li>
+											<a href="iletisim.html" title="Contact Us">Çerez Politikası</a>
+										</li>
+										<li>
+											<a href="iletisim.html" title="Contact Us">KVKK</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-6 col-md-4">
+							<div class="footer-link-wp">
+								<div class="footer-link">
+									<h4 class="h4-title footer-title">Çalışma Alanlarımız</h4>
+									<ul>
+										<li>
+											<a href="arabuluculuk.html" title="Professional Advice">Arabuluculuk</a>
+										</li>
+									
+										
+										<li>
+											<a href="birlesme-ve-devralmalar.html" title="Professional Advice">Birleşme ve Devralmalar</a>
+										</li>
+										<li>
+											<a href="ceza-hukuku.html" title="Professional Advice">Ceza Hukuku</a>
+										</li>
+										<li>
+											<a href="aile-hukuku.html" title="Professional Advice">Aile Hukuku</a>
+										</li>
+										<li>
+											<a href="icra-ve-iflas-hukuku.html" title="Professional Advice">İcra ve İflas Hukuku</a>
+										</li>
+										<li>
+											<a href="ticaret-hukuku.html" title="Professional Advice">Ticaret Hukuku</a>
+										</li>
+										<li>
+											<a href="miras-hukuku.html" title="Professional Advice">Miras Hukuku</a>
+										</li>
+										<li>
+											<a href="kira-hukuku.html" title="Professional Advice">Kira Hukuku</a>
+										</li>
+										<li>
+											<a href="is-hukuku.html" title="Professional Advice">İş Hukuku</a>
+										</li>
+										<li>
+											<a href="sigorta-hukuku.html" title="Professional Advice">Sigorta Hukuku</a>
+										</li>
+										<li>
+											<a href="gayrimenkul-hukuku.html" title="Professional Advice">Gayrimenkul Hukuku</a>
+										</li>
+										
+										<li>
+											<a href="rekabet-hukuku.html" title="Professional Advice">Rekabet Hukuku</a>
+										</li>
+										
+										
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-5">
+							<div class="footer-contact">
+								<h4 class="h4-title footer-title">İletişim</h4>
+								<ul>
+									<li>
+										<span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+										<div class="text">
+											<div>
+												<a href="https://maps.app.goo.gl/MNVgT55a93WuuBD48"
+													title=""
+													target="_blank">Yeşilköy mah. Atatürk cad. EGS Business Park B2 Blok No:12/160 Bakırköy/İstanbul</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<span class="icon"><i class="fas fa-envelope"></i></span>
+										<div class="text">
+											<div>
+												<a href="mailto:info@avukatvolkanaksu.com" title="Mail on info@Av. Volkan Aksu.com">info@avukatvolkanaksu.com</a>
+											</div>
+											
+										</div>
+									</li>
+									<li>
+										<span class="icon"><i class="fas fa-phone-alt"></i></span>
+										<div class="text">
+											<div>
+												<a href="tel:905322063964" title="+90 532 206 39 64">+90 532 206 39 64</a>
+												<br>
+											<a href="tel:902129989903" title="+90 532 206 39 64">+90 212 998 99 03</a>
+											</div>
+											
+										</div>
+									</li>
+								</ul>
+								<div style="position: relative; width: 100%;">
+									<iframe
+										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.7564183611207!2d28.832530100000003!3d40.9868143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa3feca109815%3A0xbbab8f6abfc174ba!2sEGS%20Business%20Park!5e0!3m2!1str!2str!4v1758461893624!5m2!1str!2str"
+										width="100%" height="250" style="border:0; border-radius: 11px; margin-top: 15px;" allowfullscreen=""
+										loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+									</iframe>
+								
+									<button onclick="shareLocation()" style="
+										margin-top: 12px;
+										background: #ffffff00;
+										
+										color: #111;
+										padding: 8px 20px;
+										border: 1px solid #111;
+										border-radius: 8px;
+										cursor: pointer;
+										font-weight: 600;
+										font-size: 15px;
+										transition: all 0.25s ease;
+										display: flex;
+										align-items: center;
+										
+										gap: 8px;
+									">
+										<img width="15" height="15" src="https://img.icons8.com/material-sharp/22/share.png" alt="share" />
+										Paylaş
+									</button>
+								</div>
+								
+								<script>
+									function shareLocation() {
+										if (navigator.share) {
+											navigator.share({
+												title: 'Yeşilköy mah. Atatürk cad. EGS Business Park B2 Blok No:12/160 Bakırköy/İstanbul',
+												text: 'Konumu buradan görebilirsin:',
+												url: 'https://maps.app.goo.gl/boXyhQueDvZJX3AH8'
+											})
+												.catch(err => console.log('Paylaşım iptal edildi veya hata: ', err));
+										} else {
+											alert('Paylaşım bu tarayıcıda desteklenmiyor.');
+										}
+									}
+								</script>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="footer-bottom">
+					<div class="footer-logo">
+						<a href="index.html" title="Av. Volkan Aksu"><img src="assets/images/logo.png" width="164"
+								height="47" alt="Av. Volkan Aksu"></a>
+					</div>
+					<div class="copy-right">
+						<p>
+							Copyright © <span id="copy-right-year">2025</span>
+							<a href="https://volkanaksu.av.tr" title="Av. Volkan Aksu"
+								target="_blank">volkanaksu.av.tr</a>. All rights reserved.
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Footer End -->
+
+		<a href="https://wa.me/905322063964" target="_blank" class="whatsapp-btn">
+			<div class="whatsapp-btn-up">
+				<img width="30" height="30" src="https://img.icons8.com/ios-glyphs/e3e5e9/30/chevron-up.png" alt="chevron-up"
+					class="lazy-img loaded">
+			</div>
+			<img width="25" height="25" src="https://img.icons8.com/material-outlined/e3e5e9/24/whatsapp--v1.png"
+				alt="whatsapp--v1" class="lazy-img loaded"><img style="width: 10px !important; height: 10px !important;" width="10" height="10"
+				src="https://img.icons8.com/ios-glyphs/e3e5e9/30/full-stop--v1.png" alt="full-stop--v1" class="lazy-img loaded">
+			İletişime Geç 
+		</a>
+
+		<!-- Scroll To Top Start -->
+		<a href="javascript:void(0);" id="scroll-to-top" class="scroll-to-top">
+			<i class="fas fa-arrow-up"></i>
+		</a>
+		<!-- Scroll To Top End -->
+	</div>
+
+	<!-- Jquery JS Link -->
+	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="./assets/js/jquery-3.7.1.min.js"></script>
+
+	<!-- Bootstrap JS Link -->
+	<script src="./assets/js/bootstrap.min.js"></script>
+	<script src="./assets/js/popper.min.js"></script>
+
+	<!-- Swiper Slider JS Link -->
+	<script src="./assets/js/swiper-bundle.min.js"></script>
+
+	<!-- Font Awesome JS Link -->
+	<script src="./assets/js/font-awesome.min.js"></script>
+
+	<!-- Wow Animation JS Link -->
+	<script src="./assets/js/wow.min.js"></script>
+
+	<!-- Custom JS Link -->
+	<script src="./assets/js/custom.js"></script>
+</body>
+
+</html>

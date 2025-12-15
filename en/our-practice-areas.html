@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+	<title>Our Services | Volkan Aksu + Partners</title>
+	
+	<meta name="keywords"
+	content="Lawyer Volkan Aksu, Istanbul lawyer, criminal lawyer, divorce lawyer, law firm, Volkan Aksu">
+<meta name="description"
+	content="Volkan Aksu Law Firm, based in Istanbul, provides expert legal services in criminal law, family law, divorce, and inheritance cases. Contact us for reliable and professional legal support.">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- FavIcon Link -->
+	<link rel="icon" href="./assets/images/favicon.png" type="image/gif" sizes="16x16">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+
+	<!-- Bootstrap CSS Link -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+
+	<!-- Swiper Slider CSS Link -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/swiper-bundle.min.css">
+
+	<!-- Wow Animation CSS Link -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/animate.css">
+
+	<!-- Main Style CSS Link -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+</head>
+
+<body class="fixed">
+	<div class="main">
+		<!-- Loader Start -->
+		<div class="loader-box">
+			<div class="loader"></div>
+		</div>
+		<!-- Loader End -->
+
+		<!-- Header Start -->
+		<header class="site-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="header-box">
+							<div class="site-branding">
+								<a href="index.html" title="Av. Volkan Aksu">
+									<img src="assets/images/logo.png" width="164" height="47" alt="Av. Volkan Aksu">
+								</a>
+							</div>
+							<div class="header-menu">
+								<nav class="main-navigation">
+									<button class="toggle-button"><span></span></button>
+									<div class="mobile-menu-box">
+										<ul>
+											<li class="linkCAT ">
+												<a href="index.html">Home</a>
+											</li>
+							
+											<li class="linkCAT active">
+												<a href="our-practice-areas.html">Our Services</a>
+											</li>
+							
+							
+							
+							
+							
+											<li class="linkCAT">
+												<a href="our-team.html">Our Team</a>
+											</li>
+							
+											<li class="linkCAT">
+												<a href="blog.html">Blog</a>
+											</li>
+											<li class="linkCAT">
+												<a href="contact.html">Contact</a>
+											</li>
+										</ul>
+										<div class="for-mob">
+											<div class="header-mob-btn">
+												<a href="login.html" class="sec-btn"><span>Login</span></a>
+											</div>
+										</div>
+									</div>
+								</nav>
+								<div class="header-btn">
+									<a href="login.html" class="sec-btn"><span>Login</span></a>
+								</div>
+								<div class="lang-button">
+									<a>
+										<img width="10" height="10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" alt="great-britain" />
+										EN
+									</a>
+									<div class="lang-button-selector">
+										<a href="../calisma-alanlarimiz.html">
+											<img width="10" height="10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/1280px-Flag_of_Turkey.svg.png" alt="turkey" /> TR
+										</a>
+										<!-- <a href="az/index.html">
+											<img width="10" height="10" src="https://img.icons8.com/color/48/azerbaijan.png" alt="azerbaijan" /> AZ
+										</a> -->
+							
+									</div>
+								</div>
+								<div class="black-shadow"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- Header End -->
+
+		<!-- Banner Start -->
+		<section class="main-banner" style="height: auto;">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<div class="banner-content">
+							
+							<h1 style="color: #fff;" class="h1-title wow fadeup-animation" data-wow-duration="0.8s"
+								data-wow-delay="0.2s">
+								Practice Areas
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Banner End -->
+		
+		<style>
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 999;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.678);
+			
+			justify-content: center;
+			align-items: center;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+	
+		.modal.show {
+			display: flex;
+			opacity: 1;
+		}
+	
+		.modal-content {
+			background: #fff;
+			backdrop-filter: blur(5px);
+			padding: 30px;
+			border-radius: 4px;
+			color: #111;
+			width: 90%;
+			max-width: 600px;
+			max-height: 80vh;
+			overflow-y: auto;
+			position: relative;
+			animation: fadeInUp 0.3s ease;
+			box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+		}
+	
+		#modalDesc p{
+			color: #353535;
+		}
+		#modalDesc{
+			color: #353535;
+		}
+	
+		.close {
+			position: absolute;
+			right: 20px;
+			top: 15px;
+			font-size: 28px;
+			cursor: pointer;
+			color: #fff;
+			transition: 0.2s;
+		}
+	
+		.close:hover {
+			color: #000;
+			transform: scale(1.2);
+		}
+	
+		@keyframes fadeInUp {
+			from {
+				transform: translateY(20px);
+				opacity: 0;
+			}
+	
+			to {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+	
+		@media (max-width: 600px) {
+			.modal-content {
+				padding: 20px;
+				max-height: 80vh;
+			}
+	
+			.close {
+				right: 10px;
+				top: 5px;
+			}
+		}
+
+		.pro-l:hover{
+			cursor: pointer;
+		}
+	</style>
+
+
+		<section style="margin-bottom: 25px;">
+  <div class="container col-12">
+    <div class="alinksw col-12 col-lg-6">
+
+      <a class="pro-l" data-title="Mediation" data-desc="
+        <p>Mediation is an alternative dispute resolution method that aims to settle legal conflicts between parties amicably, without the need for court proceedings. Our firm provides professional support to clients in both mandatory and voluntary mediation processes.</p>
+        <p>Our team, specialized in a wide range of areas such as commercial disputes, employer-employee relations, consumer complaints, rental, and partnership conflicts, focuses on creating fair and lasting solutions that protect the interests of all parties.</p>
+        <p>During the mediation process, we facilitate communication between the parties and provide a confidential and secure environment to reach mutual agreement. This process offers significant time and cost advantages, and we are dedicated to ensuring our clients achieve the most efficient outcomes while safeguarding their rights.</p>
+      ">Mediation</a>
+
+      <a class="pro-l" data-title="Mergers and Acquisitions" data-desc="
+        <p>Mergers and acquisitions are among the most critical steps in the growth and restructuring processes of companies. These transactions go beyond financial evaluations, involving legal risk assessments, regulatory compliance, and the alignment of commercial strategies.</p>
+        <p>Our firm provides comprehensive legal support in M&A transactions, conducting due diligence processes, drafting and negotiating contracts that protect our clients’ interests, and managing negotiations with precision. For complex, multinational transactions, we ensure compliance with both local and international regulations through detailed legal consultancy.</p>
+        <p>We develop strategic roadmaps tailored to our clients’ objectives, ensuring that transactions are completed securely, efficiently, and in full legal compliance. We also handle all necessary notifications and approvals before the Competition Authority and other regulatory bodies, providing legal assurance at every stage of the process.</p>
+      ">Mergers and Acquisitions</a>
+
+	<a class="pro-l" data-title="Competition Law" data-desc="
+	        <p>Compliance with competition law is essential for companies operating in both local and global markets. Our firm represents clients in investigations, audits, and litigation processes within the framework of competition law.</p>
+	        <p>We provide expertise in merger notifications to the Competition Authority, abuse of dominance, cartel agreements, and unfair competition cases. We also assist companies in developing internal compliance programs and training to ensure full adherence to competition regulations.</p>
+	        <p>Our mission is to help our clients operate safely within the framework of competition law, avoid administrative penalties, and contribute to maintaining a fair and balanced market environment.</p>
+	      ">Competition Law</a>
+
+      <a class="pro-l" data-title="Criminal Law" data-desc="
+        <p>Criminal law is one of the most vital branches of law, directly concerning fundamental human rights and freedoms. Our firm represents clients throughout all stages of criminal proceedings, including investigation, prosecution, and appeal, providing effective defense strategies tailored to each case.</p>
+        <p>We offer expertise in a wide range of cases, including economic crimes, cybercrimes, corporate liability, and personal offenses. Every claim, piece of evidence, and procedural step is thoroughly analyzed to ensure a strong defense against unjust accusations.</p>
+        <p>Additionally, protecting the rights of victims is among our firm’s top priorities. We take the necessary legal actions to secure compensation for damages arising from criminal acts and strive to ensure justice is served in the most effective way possible.</p>
+      ">Criminal Law</a>
+
+      <a class="pro-l" data-title="Family Law" data-desc="
+        <p>Family law is not only a legal field but also one with deep social and emotional dimensions. In divorce, custody, alimony, property division, and paternity cases, we adopt a sensitive and client-oriented approach that addresses both the legal and emotional needs of our clients.</p>
+        <p>The best interests of the child are always our primary focus in family law disputes. In custody and visitation arrangements, we take the necessary legal measures to protect the psychological and social development of children. In divorce proceedings, we aim to safeguard the rights of both parties and minimize potential disputes through fair and balanced solutions.</p>
+        <p>Our firm also encourages amicable settlement methods such as mediation and reconciliation before resorting to litigation. However, when court proceedings become necessary, we represent our clients with determination to ensure the most just outcome possible.</p>
+      ">Family Law</a>
+
+      <a class="pro-l" data-title="Enforcement and Bankruptcy Law" data-desc="
+        <p>One of the most common issues in commercial life is the collection of receivables. Our firm provides effective enforcement services to help creditors recover their rights promptly while offering debt restructuring and concordat options for debtors.</p>
+        <p>Our services extend beyond litigation to include preventive legal consultancy. We provide advice on incorporating collateral provisions, mortgages, and pledges into contracts to protect our clients’ commercial relationships from potential risks.</p>
+        <p>We also assist companies during bankruptcy postponement, liquidation, and concordat processes, producing legal strategies to safeguard assets. Our primary goal is to minimize financial losses and help our clients maintain a sustainable commercial balance.</p>
+      ">Enforcement and Bankruptcy Law</a>
+
+      <a class="pro-l" data-title="Commercial Law" data-desc="
+        <p>Commercial law governs the establishment, operation, and dissolution of businesses under various legal frameworks. Our firm provides both preventive consultancy and dispute resolution services across all areas of commercial law.</p>
+        <p>We assist with company formations, share transfers, board resolutions, and bookkeeping compliance. In drafting, negotiating, and executing commercial contracts, we act to protect our clients’ interests. We offer detailed legal guidance particularly in distribution, dealership, supply, partnership, and franchise agreements, which form the backbone of commercial activity.</p>
+        <p>In the event of disputes, we represent our clients in commercial litigation, taking all necessary legal actions to protect their rights. Our goal is to ensure uninterrupted and secure business operations while strengthening our clients’ competitive position in the market.</p>
+      ">Commercial Law</a>
+
+      <a class="pro-l" data-title="Inheritance Law" data-desc="
+        <p>Inheritance law regulates how a person’s estate is distributed after their death. As this process often involves family members and emotional disputes, it requires a delicate and precise legal approach.</p>
+        <p>Our firm offers comprehensive legal support in matters such as estate division, drafting and execution of wills, inheritance contracts, reduction lawsuits, and renunciation of inheritance cases.</p>
+        <p>Our aim is to prevent family conflicts and ensure that inheritance is distributed fairly and in accordance with the law, protecting our clients’ rights throughout the process.</p>
+      ">Inheritance Law</a>
+
+      <a class="pro-l" data-title="Tenancy Law" data-desc="
+        <p>Tenancy law governs the rights and obligations arising from lease agreements between landlords and tenants. Our firm provides legal consultancy services that protect the interests of both parties in residential and commercial leases.</p>
+        <p>We handle the preparation, renewal, and amendment of lease agreements, as well as rent determination, eviction, and rent adjustment lawsuits.</p>
+        <p>Our goal is to establish legally sound and balanced lease relationships, prevent disputes before they arise, and resolve conflicts quickly and effectively when they occur.</p>
+      ">Tenancy Law</a>
+
+      <a class="pro-l" data-title="Labor Law" data-desc="
+        <p>Labor law regulates the relationship between employers and employees, forming the foundation of working life. Our firm provides professional legal assistance to both employers and employees in all matters related to employment law.</p>
+        <p>We offer representation and consultancy services in cases involving unfair dismissal, severance and notice pay, overtime, workplace harassment, reinstatement, employment contracts, and social security disputes.</p>
+        <p>Our mission is to maintain workplace peace by balancing the rights of both sides and to resolve conflicts effectively through preventive legal measures whenever possible.</p>
+      ">Labor Law</a>
+
+      <a class="pro-l" data-title="Insurance Law" data-desc="
+        <p>Insurance law governs the rights and obligations arising from insurance contracts. Our firm provides comprehensive legal services in disputes involving both policyholders and insurance companies.</p>
+        <p>We handle insurance compensation cases, policy cancellations, risk assessments, damage evaluations, and recourse actions, ensuring that our clients’ rights are fully protected.</p>
+        <p>Our goal is to secure fair compensation for our clients’ losses and ensure that insurance-related disputes are resolved efficiently and in accordance with the law.</p>
+      ">Insurance Law</a>
+
+      <a class="pro-l" data-title="Real Estate Law" data-desc="
+        <p>Real estate law encompasses all legal matters related to immovable property. Our firm provides consultancy services across a wide spectrum, from property purchases and sales to urban transformation projects.</p>
+        <p>We specialize in title deed cancellation and registration lawsuits, condominium disputes, lease relations, construction contracts in return for land share, and contractor receivables.</p>
+        <p>Our aim is to ensure that real estate investments proceed in full compliance with the law while protecting our clients’ rights in any disputes that may arise.</p>
+      ">Real Estate Law</a>
+
+      
+
+      
+
+    </div>
+  </div>
+</section>
+
+
+
+
+		
+		<!-- Modal -->
+		<div id="modalBox" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h2 id="modalTitle"></h2>
+				<p id="modalDesc"></p>
+			</div>
+		</div>
+		
+		
+		
+		<script>
+			const links = document.querySelectorAll('.pro-l');
+			const modal = document.getElementById('modalBox');
+			const modalTitle = document.getElementById('modalTitle');
+			const modalDesc = document.getElementById('modalDesc');
+			const closeBtn = document.querySelector('.close');
+
+			links.forEach(link => {
+				link.addEventListener('click', (e) => {
+					e.preventDefault();
+					modalTitle.textContent = link.dataset.title;
+					modalDesc.innerHTML = link.dataset.desc;
+					modal.classList.add('show');
+				});
+			});
+
+			closeBtn.addEventListener('click', () => {
+				modal.classList.remove('show');
+				setTimeout(() => modal.style.display = 'none', 300);
+			});
+
+			window.addEventListener('click', (e) => {
+				if (e.target === modal) {
+					modal.classList.remove('show');
+					setTimeout(() => modal.style.display = 'none', 300);
+				}
+			});
+
+			const observer = new MutationObserver(() => {
+				if (modal.classList.contains('show')) {
+					modal.style.display = 'flex';
+				}
+			});
+			observer.observe(modal, { attributes: true });
+		</script>
+
+
+	
+
+		<footer class="site-footer">
+			<div class="container">
+				<div class="footer-top">
+					<div class="row">
+						<div class="col-lg-3">
+							<div class="footer-info">
+								<h4 class="h4-title footer-title">Social</h4>
+								<div class="social-media">
+									<a href="https://facebook.com" title="Follow on Facebook" target="_blank"><i
+											class="fab fa-facebook-f" aria-hidden="true"></i></a>
+									<a href="https://instagram.com" title="Follow on Instagram" target="_blank"><i
+											class="fab fa-instagram" aria-hidden="true"></i></a>
+									<a href="https://linkedin.com" title="Follow on LinkedIn" target="_blank"><i
+											class="fab fa-linkedin-in"></i></a>
+								</div>
+							</div>
+						</div>
+		
+						<div class="col-lg-3 col-sm-6 col-md-3">
+							<div class="footer-link-wp">
+								<div class="footer-link">
+									<h4 class="h4-title footer-title">Menu</h4>
+									<ul>
+										<li><a href="index.html" title="Home">Home</a></li>
+										<li><a href="our-team.html" title="About Us">About Us</a></li>
+										<li><a href="our-practice-areas.html" title="Practice Areas">Practice Areas</a></li>
+										<li><a href="blog.html" title="Blog">Blog</a></li>
+										<li><a href="contact.html" title="Contact Us">Contact</a></li>
+										<li><a href="contact.html" title="Cookie Policy">Cookie Policy</a></li>
+										<li><a href="contact.html" title="KVKK">Personal Data Protection (KVKK)</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+		
+						<div class="col-lg-3 col-sm-6 col-md-4">
+							<div class="footer-link-wp">
+								<div class="footer-link">
+									<h4 class="h4-title footer-title">Practice Areas</h4>
+									<ul>
+										<li><a href="mediation.html" title="Professional Advice">Mediation</a></li>
+										<li><a href="mergers-and-acquisitions.html" title="Professional Advice">Mergers and
+												Acquisitions</a></li>
+										<li><a href="criminal-law.html" title="Professional Advice">Criminal Law</a></li>
+										<li><a href="family-law.html" title="Professional Advice">Family Law</a></li>
+										<li><a href="bankruptcy-and-enforcement.html" title="Professional Advice">Bankruptcy and
+												Enforcement Law</a></li>
+										<li><a href="commercial-law.html" title="Professional Advice">Commercial Law</a></li>
+										<li><a href="inheritance-law.html" title="Professional Advice">Inheritance Law</a></li>
+										<li><a href="rental-law.html" title="Professional Advice">Lease Law</a></li>
+										<li><a href="labor-law.html" title="Professional Advice">Labor Law</a></li>
+										<li><a href="insurance-law.html" title="Professional Advice">Insurance Law</a></li>
+										<li><a href="real-estate-law.html" title="Professional Advice">Real Estate Law</a></li>
+										
+										<li><a href="competition-law.html" title="Professional Advice">Competition Law</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+		
+						<div class="col-lg-3 col-md-5">
+							<div class="footer-contact">
+								<h4 class="h4-title footer-title">Contact</h4>
+								<ul>
+									<li>
+										<span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+										<div class="text">
+											<div>
+												<a href="https://maps.app.goo.gl/MNVgT55a93WuuBD48" title="" target="_blank">
+													Yeşilköy Mah. Atatürk Cad. EGS Business Park B2 Block No:12/160 Bakırköy /
+													İstanbul
+												</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<span class="icon"><i class="fas fa-envelope"></i></span>
+										<div class="text">
+											<div>
+												<a href="mailto:info@avukatvolkanaksu.com"
+													title="Send Email">info@avukatvolkanaksu.com</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<span class="icon"><i class="fas fa-phone-alt"></i></span>
+										<div class="text">
+											<div>
+												<a href="tel:905322063964" title="+90 532 206 39 64">+90 532 206 39 64</a>
+												<br>
+											<a href="tel:902129989903" title="+90 532 206 39 64">+90 212 998 99 03</a>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div style="position: relative; width: 100%;">
+									<iframe
+										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.7564183611207!2d28.832530100000003!3d40.9868143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa3feca109815%3A0xbbab8f6abfc174ba!2sEGS%20Business%20Park!5e0!3m2!1str!2str!4v1758461893624!5m2!1str!2str"
+										width="100%" height="250" style="border:0; border-radius: 11px; margin-top: 15px;" allowfullscreen=""
+										loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+									</iframe>
+								
+									<button onclick="shareLocation()" style="
+																		margin-top: 12px;
+																		background: #ffffff00;
+																		
+																		color: #111;
+																		padding: 8px 20px;
+																		border: 1px solid #111;
+																		border-radius: 8px;
+																		cursor: pointer;
+																		font-weight: 600;
+																		font-size: 15px;
+																		transition: all 0.25s ease;
+																		display: flex;
+																		align-items: center;
+																		
+																		gap: 8px;
+																	">
+										<img width="15" height="15" src="https://img.icons8.com/material-sharp/22/share.png" alt="share" />
+										Share
+									</button>
+								</div>
+								
+								<script>
+									function shareLocation() {
+											if (navigator.share) {
+												navigator.share({
+													title: 'Yeşilköy mah. Atatürk cad. EGS Business Park B2 Blok No:12/160 Bakırköy/İstanbul',
+													text: 'You can check the location here:',
+													url: 'https://maps.app.goo.gl/boXyhQueDvZJX3AH8'
+												})
+													.catch(err => console.log('Share canceled or failed: ', err));
+											} else {
+												alert('Sharing is not supported in this browser.');
+											}
+										}
+
+								</script>
+							</div>
+						</div>
+					</div>
+				</div>
+		
+				<div class="footer-bottom">
+					<div class="footer-logo">
+						<a href="index.html" title="Av. Volkan Aksu"><img src="assets/images/logo.png" width="164" height="47"
+								alt="Av. Volkan Aksu"></a>
+					</div>
+					<div class="copy-right">
+						<p>
+							Copyright © <span id="copy-right-year">2025</span>
+							<a href="https://volkanaksu.av.tr" title="Av. Volkan Aksu" target="_blank">volkanaksu.av.tr</a>. All
+							rights reserved.
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Footer End -->
+
+
+		<a href="https://wa.me/905322063964" target="_blank" class="whatsapp-btn">
+			<div class="whatsapp-btn-up">
+				<img width="30" height="30" src="https://img.icons8.com/ios-glyphs/e3e5e9/30/chevron-up.png" alt="chevron-up"
+					class="lazy-img loaded">
+			</div>
+			<img width="25" height="25" src="https://img.icons8.com/material-outlined/e3e5e9/24/whatsapp--v1.png"
+				alt="whatsapp--v1" class="lazy-img loaded"><img style="width: 10px !important; height: 10px !important;" width="10" height="10"
+				src="https://img.icons8.com/ios-glyphs/e3e5e9/30/full-stop--v1.png" alt="full-stop--v1" class="lazy-img loaded">
+			Get in Touch
+		</a>
+
+		<!-- Scroll To Top Start -->
+		<a href="javascript:void(0);" id="scroll-to-top" class="scroll-to-top">
+			<i class="fas fa-arrow-up"></i>
+		</a>
+		<!-- Scroll To Top End -->
+	</div>
+
+	<!-- Jquery JS Link -->
+	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="./assets/js/jquery-3.7.1.min.js"></script>
+
+	<!-- Bootstrap JS Link -->
+	<script src="./assets/js/bootstrap.min.js"></script>
+	<script src="./assets/js/popper.min.js"></script>
+
+	<!-- Swiper Slider JS Link -->
+	<script src="./assets/js/swiper-bundle.min.js"></script>
+
+	<!-- Font Awesome JS Link -->
+	<script src="./assets/js/font-awesome.min.js"></script>
+
+	<!-- Wow Animation JS Link -->
+	<script src="./assets/js/wow.min.js"></script>
+
+	<!-- Custom JS Link -->
+	<script src="./assets/js/custom.js"></script>
+</body>
+
+</html>

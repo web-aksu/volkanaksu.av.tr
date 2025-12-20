@@ -3379,9 +3379,9 @@ label {
 
 .linkCAT.active a {
     padding: 15px 15px;
-    background: #ff8801;
-    border-radius: 4px;
-    color: #fff !important;
+    border-bottom: 2px solid #ff8801;
+   
+    color: #000000 !important;
 }
 
 .blog-pagination ul li.arrow a {

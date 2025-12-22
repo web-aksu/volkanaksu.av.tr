@@ -164,7 +164,7 @@ $(document).ready(function ($) {
             disableOnInteraction: false,
         },
         spaceBetween: 48,
-        speed: 1500,
+        speed: 6000,
         pagination: {
             el: ".swiper-pagination",
             clickable: true,

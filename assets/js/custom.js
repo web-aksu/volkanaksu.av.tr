@@ -204,7 +204,7 @@ $(document).ready(function ($) {
     const our_story_slider = new Swiper(".our-story-slider", {
         slidesPerView: 4,
         loop: false,
-        speed: 1500,
+        speed: 6000,
         direction: "horizontal",
         effect: "slide",
         navigation: false,

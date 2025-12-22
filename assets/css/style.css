@@ -1,6 +1,6 @@
 /*==========Common CSS Start==========*/
 :root {
-    --primary-color: #224a80;
+    --primary-color: #ff8801;
     --primary-shadow: 0px 4px 30px -1px #ffffff4d;
     --secondary-color: #111;
     --secondary-shadow: 0px 4px 20px -1px #011C1A33;
@@ -1198,7 +1198,7 @@ label {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #000000b9;
+    background: #0000005e;
     z-index: 1;
 }
 

@@ -120,7 +120,7 @@ $(document).ready(function ($) {
         slidesPerView: 4,
         loop: true,
         autoplay: {
-            delay: 1000,
+            delay: 4000,
             disableOnInteraction: false,
         },
         spaceBetween: 0,

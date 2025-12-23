@@ -1,6 +1,6 @@
 /*==========Common CSS Start==========*/
 :root {
-    --primary-color: #224a80;
+    --primary-color: #d37509;
     --primary-shadow: 0px 4px 30px -1px #ffffff4d;
     --secondary-color: #111;
     --secondary-shadow: 0px 4px 20px -1px #011C1A33;
@@ -155,7 +155,7 @@ p:last-child {
     width: auto;
     max-width: 100%;
     height: 60px;
-    background: #31619e10;
+    background: #f8840010;
 
     border-radius: 4px;
     font-size: 15px;
@@ -175,7 +175,7 @@ p:last-child {
 }
 
 .sec-btn:hover {
-    background: #31619e;
+    background: #f88400;
     color: var(--white-color);
     box-shadow: 0px 4px 30px rgba(203, 166, 114, 0.3);
     padding: 5px 74px 5px 34px;
@@ -193,7 +193,7 @@ p:last-child {
     height: 50px;
     background: var(--white-color);
     border-radius: 4px;
-    color: var(--primary-color);
+    color: #f88400;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -205,7 +205,7 @@ p:last-child {
 .sec-btn:hover:before {
     left: calc(100% - 55px);
     transform: translate(0, -50%);
-    background: #31619e;
+    background: #f88400;
     color: var(--white-color);
 }
 
@@ -453,7 +453,7 @@ p:last-child {
     font-size: 15px;
     line-height: 25px;
     color: var(--common-color);
-    border: 1px solid #31619e;
+    border: 1px solid #f88400;
     outline: none;
     padding: 17px 30px;
     border-radius: 4px;
@@ -622,12 +622,15 @@ label {
     position: relative;
     padding: 0 0 100px 0;
 }
-
+.case-study-box-text{
+    padding-top: 15px;
+}
 .arrow-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px;
+    width: 50px;
+    
     aspect-ratio: 1/1;
     background: transparent;
     border: 1px solid var(--white-color);
@@ -639,7 +642,7 @@ label {
 
 .arrow-btn:hover {
     background: var(--white-color);
-    color: var(--primary-color);
+    color: #e9820d;
     transform: rotate(-45deg);
 }
 
@@ -649,7 +652,7 @@ label {
     gap: 10px;
     font-size: 15px;
     line-height: 23px;
-    color: var(--primary-color);
+    color: #e9820d;
 
     font-weight: 600;
     transition: 0.3s;
@@ -1198,7 +1201,7 @@ label {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #000000b9;
+    background: #0000007e;
     z-index: 1;
 }
 
@@ -1210,6 +1213,9 @@ label {
     position: relative;
     z-index: 0;
     transition: 0.5s;
+}
+.case-study-box-text p{
+    display: none !important;
 }
 
 .case-study-box:hover img {
@@ -2116,7 +2122,7 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #31619e;
+    background: #f88400;
     border-radius: 4px;
     font-size: 15px;
     color: #fff;
@@ -2125,7 +2131,10 @@ label {
 
 .social-media a:hover {
     background: var(--primary-color);
-    color: #353535;
+    color: #fff;
+}
+.small.d-block{
+    color: #c06e0f;
 }
 
 .footer-link-wp {
@@ -2176,7 +2185,7 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #31619e;
+    background: #f88400;
     border-radius: 4px;
     color: #fff;
     flex-shrink: 0;
@@ -3375,6 +3384,7 @@ label {
     padding: 15px 15px;
     background: #ff880010;
     border-radius: 4px;
+    color: #000000 !important;
 }
 
 .linkCAT.active a {
@@ -6258,3 +6268,68 @@ label {
 .about-us-content p {
     color: #f0f0f0 !important;
 }
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    border: 1px solid #e6e6e6;
+    text-decoration: none;
+    color: #111;
+    background: #fff;
+    transition: all .3s ease;
+}
+
+.service-item:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .06);
+    transform: translateY(-3px);
+}
+
+.service-icon {
+    font-size: 30px;
+    color: #ff7a00;
+    width: 64px;
+    background: #ff7a0020;
+    border: 1px solid #ff7a0050;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.service-divider {
+    width: 1px;
+    height: 42px;
+    background: #ccc;
+    margin: 0 20px;
+}
+
+.service-title {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: .4px;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-icon {
+        width: 45px;
+        padding: 3px;
+    }
+    .service-title {
+    font-size: 16px;
+   
+}
+}
+.services-area{
+    padding: 35px 0;
+}
+

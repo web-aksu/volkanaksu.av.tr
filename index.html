@@ -120,32 +120,112 @@
 		</header>
 		<!-- Header End -->
 
-		<!-- Banner Start -->
-		<section class="main-banner">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="banner-content">
-						<div class="col-lg-6 align-self-center">
-							<div class="about-us-content wow " data-wow-duration="0.8s" data-wow-delay="0.2s">
-					
-					
-					
-					
-							
-					
-								
-							</div>
-						</div>
-					
-					
-					</div>
-					
-				</div>
-			</div>
-			
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 		
-		</section>
-		<!-- Banner End -->
+		<style>
+			/* Slider Ana Kapsayıcısı */
+			.hero-uniq-container {
+				width: 100%;
+				/* Hero yüksekliği: Ekranın %80'i kadar kaplar. */
+				height: 70vh;
+				/* Mobil gibi küçük ekranlarda çok daralmaması için minimum yükseklik */
+				min-height: 500px;
+				position: relative;
+				overflow: hidden;
+				background-color: #1a1a1a;
+				/* Resim yüklenene kadar koyu zemin */
+				margin-bottom: 30px;
+				/* Altındaki içerikle mesafe */
+			}
+		
+			/* Görsellerin Ayarları */
+			.hero-uniq-img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				/* Hero alanını tamamen doldurur, taşan kısımlar kesilir, görüntü bozulmaz */
+				object-fit: cover;
+				object-position: top center;
+			}
+		
+			/* Alt kısımdaki noktaların (pagination) özelleştirilmesi */
+			/* Sadece bu slider'ı etkiler, diğerlerini bozmaz */
+			.hero-uniq-container .swiper-pagination-bullet {
+				width: 12px;
+				/* Nokta genişliği */
+				height: 12px;
+				/* Nokta yüksekliği */
+				background: #ffffff;
+				/* Beyaz renk */
+				opacity: 0.4;
+				/* Pasifken şeffaflık */
+				transition: all 0.3s ease;
+			}
+		
+			/* Aktif olan noktanın stili */
+			.hero-uniq-container .swiper-pagination-bullet-active {
+				opacity: 1;
+				/* Aktifken tam beyaz */
+				transform: scale(1.2);
+				/* Hafifçe büyüsün */
+			}
+		</style>
+		
+		<div class="swiper hero-uniq-container">
+			<div class="swiper-wrapper">
+		
+				<div class="swiper-slide">
+					<img src="https://storage.googleapis.com/goturkiyev2-storage/Root/health/istanbul_390x735px_hero_banner.jpg" alt="Hero Görsel 1" class="hero-uniq-img">
+				</div>
+		
+				<div class="swiper-slide">
+					<img src="https://kriterdergi.com/images/news/2021/06/01/zeynelyaman.jpg" alt="Hero Görsel 2" class="hero-uniq-img">
+				</div>
+		
+				<div class="swiper-slide">
+					<img src="https://queblounge.com/wp-content/uploads/2024/03/istanbul-bopshorus.jpg" alt="Hero Görsel 3" class="hero-uniq-img">
+				</div>
+		
+			</div>
+		
+			
+		</div>
+		
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		
+		<script>
+			// Sayfa tamamen yüklendiğinde çalıştır (Bug önleyici tedbir)
+			document.addEventListener('DOMContentLoaded', function () {
+
+				// Benzersiz değişken ismi kullanıyoruz
+				const heroSwiperUniq = new Swiper('.hero-uniq-container', {
+					// Efekt Ayarı: Fade (Solma)
+					effect: 'fade',
+					fadeEffect: {
+						crossFade: true // Yumuşak geçiş için önemli
+					},
+
+					// Temel Ayarlar
+					loop: true, // Sonsuz döngü (Sona gelince başa sarar)
+					slidesPerView: 1, // Her seferde 1 görsel
+					spaceBetween: 0, // Görseller arası boşluk yok
+					speed: 1500, // Geçiş hızı (ms) - Daha estetik olması için yavaşlattım
+
+					// Otomatik Oynatma
+					autoplay: {
+						delay: 4000, // 4 saniye bekle
+						disableOnInteraction: false, // Kullanıcı tıklasa da devam et
+					},
+
+					
+
+					// DOM değişikliklerini izle (Pagination bug'ını önlemeye yardımcı olur)
+					observer: true,
+					observeParents: true,
+				});
+
+			});
+		</script>
 
 		
 
@@ -503,7 +583,7 @@
 				<div class="row align-items-center row-gap-4" style="display: flex; align-items: center; justify-content: space-between;">
 				
 					<div class="col-lg-4"
-						style="background: #9e313110; border-radius: 4px; padding: 15px; max-width:400px; border: 2px solid #9e313150;">
+						style="background: #9e313100; border-radius: 4px; padding:10px 7px; max-width:400px; border: 2px solid #9e313115;">
 						<div class="our-services-content">
 							<p style="display: flex; align-items: center; gap: 15px; color: #000; font-size: 16px;">
 								<img style="width: 50px; height: 50px; padding: 8px; background: #fff; border-radius: 50%;"
@@ -518,7 +598,7 @@
 					</div>
 				
 					<div class="col-lg-4"
-						style="background: #9e313110; border-radius: 4px; padding: 15px; max-width:400px; border: 2px solid #9e313150;">
+						style="background: #9e313100; border-radius: 4px; padding:10px 7px; max-width:400px; border: 2px solid #9e313115;">
 						<div class="our-services-content">
 							<p style="display: flex; align-items: center; gap: 15px; color: #000; font-size: 16px;">
 								<img style="width: 50px; height: 50px; padding: 8px; background: #fff; border-radius: 50%;"
@@ -534,7 +614,7 @@
 					</div>
 				
 					<div class="col-lg-4"
-						style="background: #9e313110; border-radius: 4px; padding: 15px; max-width:400px; border: 2px solid #9e313150;">
+						style="background: #9e313100; border-radius: 4px; padding:10px 7px; max-width:400px; border: 2px solid #9e313115;">
 						<div class="our-services-content">
 							<p style="display: flex; align-items: center; gap: 15px; color: #000; font-size: 16px;">
 								<img style="width: 50px; height: 50px; padding: 8px; background: #fff; border-radius: 50%;"
@@ -677,49 +757,69 @@
 							<div class="footer-link-wp">
 								<div class="footer-link">
 									<h4 class="h4-title footer-title">Çalışma Alanlarımız</h4>
-									<ul>
-										<li>
-											<a href="calisma-alanlarimiz.html" title="Professional Advice">Arabuluculuk</a>
-										</li>
-									
-										
-										<li>
-											<a href="calisma-alanlarimiz.html" title="Professional Advice">Birleşme ve Devralmalar</a>
-										</li>
-										<li>
-											<a href="calisma-alanlarimiz.html" title="Professional Advice">Ceza Hukuku</a>
-										</li>
-										<li>
-											<a href="calisma-alanlarimiz.html" title="Professional Advice">Aile Hukuku</a>
-										</li>
-										<li>
-											<a href="calisma-alanlarimiz.html" title="Professional Advice">İcra ve İflas Hukuku</a>
-										</li>
-										<li>
-											<a href="calisma-alanlarimiz.html" title="Professional Advice">Ticaret Hukuku</a>
-										</li>
-										<li>
-											<a href="calisma-alanlarimiz.html" title="Professional Advice">Miras Hukuku</a>
-										</li>
-										<li>
-											<a href="calisma-alanlarimiz.html" title="Professional Advice">Kira Hukuku</a>
-										</li>
-										<li>
-											<a href="calisma-alanlarimiz.html" title="Professional Advice">İş Hukuku</a>
-										</li>
-										<li>
-											<a href="calisma-alanlarimiz.html" title="Professional Advice">Sigorta Hukuku</a>
-										</li>
-										<li>
-											<a href="calisma-alanlarimiz.html" title="Professional Advice">Gayrimenkul Hukuku</a>
-										</li>
-										
-										<li>
-											<a href="calisma-alanlarimiz.html" title="Professional Advice">Rekabet Hukuku</a>
-										</li>
-										
+									<ul class="footer-modal-links">
+										<li><a href="#" title="Professional Advice">Arabuluculuk</a></li>
+										<li><a href="#" title="Professional Advice">Birleşme ve Devralmalar</a></li>
+										<li><a href="#" title="Professional Advice">Ceza Hukuku</a></li>
+										<li><a href="#" title="Professional Advice">Aile Hukuku</a></li>
+										<li><a href="#" title="Professional Advice">İcra ve İflas Hukuku</a></li>
+										<li><a href="#" title="Professional Advice">Ticaret Hukuku</a></li>
+										<li><a href="#" title="Professional Advice">Miras Hukuku</a></li>
+										<li><a href="#" title="Professional Advice">Kira Hukuku</a></li>
+										<li><a href="#" title="Professional Advice">İş Hukuku</a></li>
+										<li><a href="#" title="Professional Advice">Sigorta Hukuku</a></li>
+										<li><a href="#" title="Professional Advice">Gayrimenkul Hukuku</a></li>
 										
 									</ul>
+									<script>
+										// Footer linklerini seçiyoruz
+											const footerLinks = document.querySelectorAll(".footer-modal-links a");
+
+											footerLinks.forEach(link => {
+												link.addEventListener("click", function (e) {
+													e.preventDefault(); // Sayfa değiştirmeyi engelle
+
+													// Tıklanan footer linkinin metnini al (Boşlukları temizle)
+													const clickedText = this.innerText.trim();
+
+													// Sayfadaki tüm içerik kutularını (case-study-box) tarayalım
+													const allBoxes = document.querySelectorAll(".case-study-box");
+													let matchFound = false;
+
+													allBoxes.forEach(box => {
+														// Kutunun başlığını bul
+														const boxTitleElement = box.querySelector("h4 a") || box.querySelector("h4");
+
+														if (boxTitleElement) {
+															const boxTitleText = boxTitleElement.innerText.trim();
+
+															// EŞLEŞME KONTROLÜ: Footer'daki yazı ile Kutudaki yazı aynı mı?
+															if (boxTitleText === clickedText) {
+
+																// Eşleşme bulundu! İçerikleri alalım
+																const descElement = box.querySelector(".case-study-box-text p");
+																const desc = descElement ? descElement.innerHTML : "İçerik bulunamadı.";
+
+																// Modala yaz
+																modalTitle.innerHTML = boxTitleText;
+																modalText.innerHTML = desc;
+
+																// Modalı aç ve scroll'u kilitle
+																modal.style.display = "flex";
+																document.body.style.overflow = "hidden";
+
+																matchFound = true;
+															}
+														}
+													});
+
+													if (!matchFound) {
+														console.log("Hata: Bu başlığa ait bir içerik kutusu (case-study-box) bulunamadı: " + clickedText);
+														// İstersen burada "İçerik hazırlanıyor..." gibi bir uyarı da açtırabilirsin.
+													}
+												});
+											});
+									</script>
 								</div>
 							</div>
 						</div>
@@ -1018,11 +1118,11 @@
 				link.addEventListener("click", function (e) {
 					e.preventDefault();
 
-					const title = this.closest(".case-study-box").querySelector("h4 a").innerText;
-					const desc = this.closest(".case-study-box").querySelector(".case-study-box-text p").innerText;
+					const title = this.closest(".case-study-box").querySelector("h4 a").innerHTML;
+					const desc = this.closest(".case-study-box").querySelector(".case-study-box-text p").innerHTML;
 
-					modalTitle.innerText = title;
-					modalText.innerText = desc;
+					modalTitle.innerHTML = title;
+					modalText.innerHTML = desc;
 
 					modal.style.display = "flex";
 				});

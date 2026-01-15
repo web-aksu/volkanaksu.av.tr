@@ -46,7 +46,7 @@
 
 		<!-- Header Start -->
 		<header class="site-header">
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row">
 					<div class="col-12">
 						<div class="header-box">
@@ -117,200 +117,373 @@
 		</header>
 		<!-- Header End -->
 
-		<!-- Banner Start -->
-		<section class="main-banner" style="height: auto;">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-lg-6">
-						<div class="banner-content">
-							
-							<h1 style="color: #fff;" class="h1-title wow fadeup-animation" data-wow-duration="0.8s"
-								data-wow-delay="0.2s">
-								Practice Areas
-							</h1>
-						</div>
-					</div>
+		<style>
+			/* Slider Ana Kapsayıcısı */
+			.hero-uniq-container {
+				width: 100%;
+				/* Hero yüksekliği: Ekranın %80'i kadar kaplar. */
+				height: 40vh;
+				/* Mobil gibi küçük ekranlarda çok daralmaması için minimum yükseklik */
+				min-height: 500px;
+				position: relative;
+				overflow: hidden;
+				background-color: #1a1a1a;
+				/* Resim yüklenene kadar koyu zemin */
+				margin-bottom: 30px;
+				/* Altındaki içerikle mesafe */
+			}
+		
+			/* Görsellerin Ayarları */
+			.hero-uniq-img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				/* Hero alanını tamamen doldurur, taşan kısımlar kesilir, görüntü bozulmaz */
+				object-fit: cover;
+				object-position: top center;
+			}
+		
+			/* Alt kısımdaki noktaların (pagination) özelleştirilmesi */
+			/* Sadece bu slider'ı etkiler, diğerlerini bozmaz */
+			.hero-uniq-container .swiper-pagination-bullet {
+				width: 12px;
+				/* Nokta genişliği */
+				height: 12px;
+				/* Nokta yüksekliği */
+				background: #ffffff;
+				/* Beyaz renk */
+				opacity: 0.4;
+				/* Pasifken şeffaflık */
+				transition: all 0.3s ease;
+			}
+		
+			/* Aktif olan noktanın stili */
+			.hero-uniq-container .swiper-pagination-bullet-active {
+				opacity: 1;
+				/* Aktifken tam beyaz */
+				transform: scale(1.2);
+				/* Hafifçe büyüsün */
+			}
+		</style>
+		
+		<div class="swiper hero-uniq-container">
+			<div class="swiper-wrapper">
+		
+				<div class="swiper-slide">
+					<img src="https://storage.googleapis.com/goturkiyev2-storage/Root/health/istanbul_390x735px_hero_banner.jpg"
+						alt="Hero Görsel 1" class="hero-uniq-img">
 				</div>
+		
+				<div class="swiper-slide">
+					<img src="https://kriterdergi.com/images/news/2021/06/01/zeynelyaman.jpg" alt="Hero Görsel 2"
+						class="hero-uniq-img">
+				</div>
+		
+				<div class="swiper-slide">
+					<img src="https://queblounge.com/wp-content/uploads/2024/03/istanbul-bopshorus.jpg" alt="Hero Görsel 3"
+						class="hero-uniq-img">
+				</div>
+		
 			</div>
-		</section>
-		<!-- Banner End -->
+		
+		
+		</div>
+		
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		
+		<script>
+			// Sayfa tamamen yüklendiğinde çalıştır (Bug önleyici tedbir)
+			document.addEventListener('DOMContentLoaded', function () {
+
+				// Benzersiz değişken ismi kullanıyoruz
+				const heroSwiperUniq = new Swiper('.hero-uniq-container', {
+					// Efekt Ayarı: Fade (Solma)
+					effect: 'fade',
+					fadeEffect: {
+						crossFade: true // Yumuşak geçiş için önemli
+					},
+
+					// Temel Ayarlar
+					loop: true, // Sonsuz döngü (Sona gelince başa sarar)
+					slidesPerView: 1, // Her seferde 1 görsel
+					spaceBetween: 0, // Görseller arası boşluk yok
+					speed: 1500, // Geçiş hızı (ms) - Daha estetik olması için yavaşlattım
+
+					// Otomatik Oynatma
+					autoplay: {
+						delay: 4000, // 4 saniye bekle
+						disableOnInteraction: false, // Kullanıcı tıklasa da devam et
+					},
+
+
+
+					// DOM değişikliklerini izle (Pagination bug'ını önlemeye yardımcı olur)
+					observer: true,
+					observeParents: true,
+				});
+
+			});
+		</script>
+		
+		
+		<div class="container my-4">
+			<h1 style="color: #111;" class="h1-title wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
+				Our Practice Areas
+			</h1>
+		
+		</div>
+		
 		
 		<style>
-		.modal {
-			display: none;
-			position: fixed;
-			z-index: 999;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(0, 0, 0, 0.678);
-			
-			justify-content: center;
-			align-items: center;
-			opacity: 0;
-			transition: opacity 0.3s ease;
-		}
-	
-		.modal.show {
-			display: flex;
-			opacity: 1;
-		}
-	
-		.modal-content {
-			background: #fff;
-			backdrop-filter: blur(5px);
-			padding: 30px;
-			border-radius: 4px;
-			color: #111;
-			width: 90%;
-			max-width: 600px;
-			max-height: 80vh;
-			overflow-y: auto;
-			position: relative;
-			animation: fadeInUp 0.3s ease;
-			box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-		}
-	
-		#modalDesc p{
-			color: #353535;
-		}
-		#modalDesc{
-			color: #353535;
-		}
-	
-		.close {
-			position: absolute;
-			right: 20px;
-			top: 15px;
-			font-size: 28px;
-			cursor: pointer;
-			color: #fff;
-			transition: 0.2s;
-		}
-	
-		.close:hover {
-			color: #000;
-			transform: scale(1.2);
-		}
-	
-		@keyframes fadeInUp {
-			from {
-				transform: translateY(20px);
+			.modal {
+				display: none;
+				position: fixed;
+				z-index: 999;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.603);
+		
+				justify-content: center;
+				align-items: center;
 				opacity: 0;
+				transition: opacity 0.3s ease;
 			}
-	
-			to {
-				transform: translateY(0);
+		
+			.modal.show {
+				display: flex;
 				opacity: 1;
 			}
-		}
-	
-		@media (max-width: 600px) {
+		
 			.modal-content {
-				padding: 20px;
+				background: #fff;
+				backdrop-filter: blur(5px);
+				padding: 30px;
+				border-radius: 4px;
+				color: #111;
+				width: 90%;
+				max-width: 600px;
 				max-height: 80vh;
+				overflow-y: auto;
+				position: relative;
+				animation: fadeInUp 0.3s ease;
+				box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
 			}
-	
+		
+			#modalDesc p {
+				color: #353535;
+			}
+		
+			#modalDesc {
+				color: #353535;
+			}
+		
 			.close {
-				right: 10px;
-				top: 5px;
+				position: absolute;
+				right: 20px;
+				top: 15px;
+				font-size: 28px;
+				cursor: pointer;
+				color: #000;
+				transition: 0.2s;
 			}
-		}
-
-		.pro-l:hover{
-			cursor: pointer;
-		}
-	</style>
-
-
-		<section style="margin-bottom: 25px;">
-  <div class="container col-12">
-    <div class="alinksw col-12 col-lg-6">
-
-      <a class="pro-l" data-title="Mediation" data-desc="
-        <p>Mediation is an alternative dispute resolution method that aims to settle legal conflicts between parties amicably, without the need for court proceedings. Our firm provides professional support to clients in both mandatory and voluntary mediation processes.</p>
-        <p>Our team, specialized in a wide range of areas such as commercial disputes, employer-employee relations, consumer complaints, rental, and partnership conflicts, focuses on creating fair and lasting solutions that protect the interests of all parties.</p>
-        <p>During the mediation process, we facilitate communication between the parties and provide a confidential and secure environment to reach mutual agreement. This process offers significant time and cost advantages, and we are dedicated to ensuring our clients achieve the most efficient outcomes while safeguarding their rights.</p>
-      ">Mediation</a>
-
-      <a class="pro-l" data-title="Mergers and Acquisitions" data-desc="
-        <p>Mergers and acquisitions are among the most critical steps in the growth and restructuring processes of companies. These transactions go beyond financial evaluations, involving legal risk assessments, regulatory compliance, and the alignment of commercial strategies.</p>
-        <p>Our firm provides comprehensive legal support in M&A transactions, conducting due diligence processes, drafting and negotiating contracts that protect our clients’ interests, and managing negotiations with precision. For complex, multinational transactions, we ensure compliance with both local and international regulations through detailed legal consultancy.</p>
-        <p>We develop strategic roadmaps tailored to our clients’ objectives, ensuring that transactions are completed securely, efficiently, and in full legal compliance. We also handle all necessary notifications and approvals before the Competition Authority and other regulatory bodies, providing legal assurance at every stage of the process.</p>
-      ">Mergers and Acquisitions</a>
-
-	<a class="pro-l" data-title="Competition Law" data-desc="
-	        <p>Compliance with competition law is essential for companies operating in both local and global markets. Our firm represents clients in investigations, audits, and litigation processes within the framework of competition law.</p>
-	        <p>We provide expertise in merger notifications to the Competition Authority, abuse of dominance, cartel agreements, and unfair competition cases. We also assist companies in developing internal compliance programs and training to ensure full adherence to competition regulations.</p>
-	        <p>Our mission is to help our clients operate safely within the framework of competition law, avoid administrative penalties, and contribute to maintaining a fair and balanced market environment.</p>
-	      ">Competition Law</a>
-
-      <a class="pro-l" data-title="Criminal Law" data-desc="
-        <p>Criminal law is one of the most vital branches of law, directly concerning fundamental human rights and freedoms. Our firm represents clients throughout all stages of criminal proceedings, including investigation, prosecution, and appeal, providing effective defense strategies tailored to each case.</p>
-        <p>We offer expertise in a wide range of cases, including economic crimes, cybercrimes, corporate liability, and personal offenses. Every claim, piece of evidence, and procedural step is thoroughly analyzed to ensure a strong defense against unjust accusations.</p>
-        <p>Additionally, protecting the rights of victims is among our firm’s top priorities. We take the necessary legal actions to secure compensation for damages arising from criminal acts and strive to ensure justice is served in the most effective way possible.</p>
-      ">Criminal Law</a>
-
-      <a class="pro-l" data-title="Family Law" data-desc="
-        <p>Family law is not only a legal field but also one with deep social and emotional dimensions. In divorce, custody, alimony, property division, and paternity cases, we adopt a sensitive and client-oriented approach that addresses both the legal and emotional needs of our clients.</p>
-        <p>The best interests of the child are always our primary focus in family law disputes. In custody and visitation arrangements, we take the necessary legal measures to protect the psychological and social development of children. In divorce proceedings, we aim to safeguard the rights of both parties and minimize potential disputes through fair and balanced solutions.</p>
-        <p>Our firm also encourages amicable settlement methods such as mediation and reconciliation before resorting to litigation. However, when court proceedings become necessary, we represent our clients with determination to ensure the most just outcome possible.</p>
-      ">Family Law</a>
-
-      <a class="pro-l" data-title="Enforcement and Bankruptcy Law" data-desc="
-        <p>One of the most common issues in commercial life is the collection of receivables. Our firm provides effective enforcement services to help creditors recover their rights promptly while offering debt restructuring and concordat options for debtors.</p>
-        <p>Our services extend beyond litigation to include preventive legal consultancy. We provide advice on incorporating collateral provisions, mortgages, and pledges into contracts to protect our clients’ commercial relationships from potential risks.</p>
-        <p>We also assist companies during bankruptcy postponement, liquidation, and concordat processes, producing legal strategies to safeguard assets. Our primary goal is to minimize financial losses and help our clients maintain a sustainable commercial balance.</p>
-      ">Enforcement and Bankruptcy Law</a>
-
-      <a class="pro-l" data-title="Commercial Law" data-desc="
-        <p>Commercial law governs the establishment, operation, and dissolution of businesses under various legal frameworks. Our firm provides both preventive consultancy and dispute resolution services across all areas of commercial law.</p>
-        <p>We assist with company formations, share transfers, board resolutions, and bookkeeping compliance. In drafting, negotiating, and executing commercial contracts, we act to protect our clients’ interests. We offer detailed legal guidance particularly in distribution, dealership, supply, partnership, and franchise agreements, which form the backbone of commercial activity.</p>
-        <p>In the event of disputes, we represent our clients in commercial litigation, taking all necessary legal actions to protect their rights. Our goal is to ensure uninterrupted and secure business operations while strengthening our clients’ competitive position in the market.</p>
-      ">Commercial Law</a>
-
-      <a class="pro-l" data-title="Inheritance Law" data-desc="
-        <p>Inheritance law regulates how a person’s estate is distributed after their death. As this process often involves family members and emotional disputes, it requires a delicate and precise legal approach.</p>
-        <p>Our firm offers comprehensive legal support in matters such as estate division, drafting and execution of wills, inheritance contracts, reduction lawsuits, and renunciation of inheritance cases.</p>
-        <p>Our aim is to prevent family conflicts and ensure that inheritance is distributed fairly and in accordance with the law, protecting our clients’ rights throughout the process.</p>
-      ">Inheritance Law</a>
-
-      <a class="pro-l" data-title="Tenancy Law" data-desc="
-        <p>Tenancy law governs the rights and obligations arising from lease agreements between landlords and tenants. Our firm provides legal consultancy services that protect the interests of both parties in residential and commercial leases.</p>
-        <p>We handle the preparation, renewal, and amendment of lease agreements, as well as rent determination, eviction, and rent adjustment lawsuits.</p>
-        <p>Our goal is to establish legally sound and balanced lease relationships, prevent disputes before they arise, and resolve conflicts quickly and effectively when they occur.</p>
-      ">Tenancy Law</a>
-
-      <a class="pro-l" data-title="Labor Law" data-desc="
-        <p>Labor law regulates the relationship between employers and employees, forming the foundation of working life. Our firm provides professional legal assistance to both employers and employees in all matters related to employment law.</p>
-        <p>We offer representation and consultancy services in cases involving unfair dismissal, severance and notice pay, overtime, workplace harassment, reinstatement, employment contracts, and social security disputes.</p>
-        <p>Our mission is to maintain workplace peace by balancing the rights of both sides and to resolve conflicts effectively through preventive legal measures whenever possible.</p>
-      ">Labor Law</a>
-
-      <a class="pro-l" data-title="Insurance Law" data-desc="
-        <p>Insurance law governs the rights and obligations arising from insurance contracts. Our firm provides comprehensive legal services in disputes involving both policyholders and insurance companies.</p>
-        <p>We handle insurance compensation cases, policy cancellations, risk assessments, damage evaluations, and recourse actions, ensuring that our clients’ rights are fully protected.</p>
-        <p>Our goal is to secure fair compensation for our clients’ losses and ensure that insurance-related disputes are resolved efficiently and in accordance with the law.</p>
-      ">Insurance Law</a>
-
-      <a class="pro-l" data-title="Real Estate Law" data-desc="
-        <p>Real estate law encompasses all legal matters related to immovable property. Our firm provides consultancy services across a wide spectrum, from property purchases and sales to urban transformation projects.</p>
-        <p>We specialize in title deed cancellation and registration lawsuits, condominium disputes, lease relations, construction contracts in return for land share, and contractor receivables.</p>
-        <p>Our aim is to ensure that real estate investments proceed in full compliance with the law while protecting our clients’ rights in any disputes that may arise.</p>
-      ">Real Estate Law</a>
-
-      
-
-      
-
-    </div>
-  </div>
-</section>
-
-
-
-
+		
+			.close:hover {
+				color: #000;
+				transform: scale(1.2);
+			}
+		
+			@keyframes fadeInUp {
+				from {
+					transform: translateY(20px);
+					opacity: 0;
+				}
+		
+				to {
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+		
+			@media (max-width: 600px) {
+				.modal-content {
+					padding: 20px;
+					max-height: 80vh;
+				}
+		
+				.close {
+					right: 10px;
+					top: 5px;
+				}
+			}
+		
+			.pro-l:hover {
+				cursor: pointer;
+			}
+		</style>
+		
+		
+		<div style="margin-bottom: 25px;">
+			<section class="services-area">
+				<div class="container">
+					<div class="services-grid">
+		
+						<a class="service-item pro-l" data-title="Family Law" data-desc="<p>Family law is not just a legal field, but also one with a strong social and human dimension. In divorce, custody, alimony, property division, and paternity cases, we adopt an approach that considers both the legal and emotional needs of our clients.</p>
+		<p>The best interest of the child is our primary priority in family law disputes. In custody and visitation arrangements, necessary legal steps are taken to protect the child's psychological and social development. In divorce processes, solutions are generated to protect the parties' rights and minimize potential conflicts.</p>
+		<p>Our firm brings up amicable resolution methods like mediation and reconciliation before resorting to litigation. However, if disputes move to court, we provide comprehensive legal representation to defend our clients' rights determinedly and reach the fairest outcome.</p>
+		">
+							<span class="service-icon">
+								<img width="50" height="50" src="https://img.icons8.com/ios/50/family--v1.png"
+									alt="family--v1" />
+							</span>
+							<span class="service-divider"></span>
+							<span class="service-title">Family Law</span>
+						</a>
+		
+						<a class="service-item pro-l" data-title="Mediation" data-desc="<p>Mediation is an alternative dispute resolution method aiming to resolve legal disputes amicably between parties without the need for a court process. Our firm offers professional support to clients in both mandatory and voluntary mediation processes.</p>
+		<p>Specializing in a wide range of areas such as commercial disputes, employer-employee relations, consumer complaints, lease, and partnership disagreements, our team aims to produce fair and permanent solutions that consider the interests of the parties.</p>
+		<p>In the mediation process, we facilitate communication between parties and contribute to reaching an agreement in a secure environment based on confidentiality. Focusing on obtaining the most efficient result while protecting our clients' rights, we leverage the time and cost advantages of this process.</p>
+		">
+							<span class="service-icon">
+								<img width="64" height="64"
+									src="https://img.icons8.com/external-icongeek26-outline-icongeek26/64/external-handshake-politic-icongeek26-outline-icongeek26.png"
+									alt="external-handshake-politic-icongeek26-outline-icongeek26" />
+							</span>
+							<span class="service-divider"></span>
+							<span class="service-title">Mediation</span>
+						</a>
+		
+						<a class="service-item pro-l" data-title="Mergers and Acquisitions" data-desc="<p>Mergers and acquisition transactions are among the most important steps in companies' growth and restructuring processes. These processes are not merely about examining financial statements but are of great importance regarding the detection of legal risks, compliance with sectoral regulations, and the correct determination of commercial strategies.</p>
+		<p>Our firm provides comprehensive legal support to clients in mergers and acquisition transactions. In this context, due diligence processes are conducted, contracts are prepared to protect the buyer or seller's interests, and negotiations are meticulously followed. Especially in complex multi-national transactions, detailed consultancy is provided to ensure compliance with both local legislation and international regulations.</p>
+		<p>By creating a roadmap suitable for our clients' strategic goals, we ensure transactions are completed securely, quickly, and effectively. Notifications and permissions required before the Competition Authority and other regulatory authorities are also followed by us, securing every stage of the process legally.</p>
+		">
+							<span class="service-icon">
+								<img width="64" height="64"
+									src="https://img.icons8.com/external-outline-geotatah/64/external-business-merger-and-acquisition-outline-geotatah-13.png"
+									alt="external-business-merger-and-acquisition-outline-geotatah-13" />
+							</span>
+							<span class="service-divider"></span>
+							<span class="service-title">Mergers and Acquisitions</span>
+						</a>
+		
+						<a class="service-item pro-l" data-title="Criminal Law" data-desc="<p>Criminal law is one of the most critical branches of law directly concerning individuals' fundamental rights and freedoms. Our firm stands by its clients at all stages of criminal proceedings, developing an effective defense strategy during investigation, prosecution, and appeal processes.</p>
+		<p>We offer expertise in a wide spectrum such as economic crimes, cybercrimes, liability of company executives, or personal crimes. Allegations, evidence, and procedural actions faced by our clients are examined in the finest detail; an effective defense is made against unjust accusations.</p>
+		<p>Additionally, protecting the rights of clients in the victim position is among our firm's priority services. In this context, legal initiatives are taken for the compensation of damages arising from the crime, aiming to ensure justice is served most effectively.</p>
+		">
+							<span class="service-icon">
+								<img width="50" height="50" src="https://img.icons8.com/ios/50/law.png" alt="law" />
+							</span>
+							<span class="service-divider"></span>
+							<span class="service-title">Criminal Law</span>
+						</a>
+		
+						<a class="service-item pro-l" data-title="Real Estate Law" data-desc="<p>Real estate law covers all kinds of legal transactions related to immovable property. Our firm offers consultancy services in a wide range extending from real estate trading to urban transformation projects.</p>
+		<p>We have experience in title deed cancellation and registration cases, condominium disputes, lease relations, construction contracts in return for land share, and contractor receivables.</p>
+		<p>Our goal is to ensure real estate investments are carried out in accordance with the law and to protect our clients' rights most effectively in potential disputes.</p>
+		">
+							<span class="service-icon">
+								<img width="64" height="64" src="https://img.icons8.com/glyph-neue/64/real-estate.png"
+									alt="real-estate" />
+							</span>
+							<span class="service-divider"></span>
+							<span class="service-title">Real Estate Law</span>
+						</a>
+		
+						<a class="service-item pro-l" data-title="Enforcement and Bankruptcy Law" data-desc="<p>One of the most common problems in commercial relations is the inability to collect receivables. Our firm effectively carries out enforcement proceedings for creditors to obtain their rights as soon as possible. Besides this, we provide legal support to debtor clients regarding debt restructuring and benefiting from legal possibilities like concordat.</p>
+		<p>Enforcement and bankruptcy processes consist not only of the litigation stage but also cover preventive consultancy services. Consultancy is provided on preventive measures such as guarantee provisions to be placed in contracts, mortgage, and pledge transactions to secure our clients' commercial relations.</p>
+		<p>Our firm produces legal solutions aimed at protecting company assets in processes like bankruptcy postponement, liquidation, and concordat. Our goal is to help our clients maintain a sustainable commercial balance by minimizing their economic losses.</p>
+		">
+							<span class="service-icon">
+								<img width="64" height="64"
+									src="https://img.icons8.com/external-outline-wichaiwi/64/external-bankrupt-business-outline-wichaiwi.png"
+									alt="external-bankrupt-business-outline-wichaiwi" />
+							</span>
+							<span class="service-divider"></span>
+							<span class="service-title">Enforcement and Bankruptcy Law</span>
+						</a>
+		
+						<a class="service-item pro-l" data-title="Labor Law" data-desc="<p>Labor law is a branch of law regulating the relationship between employee and employer and forming the basis of working life. Our firm provides professional support in all kinds of legal processes for both employee and employer sides.</p>
+		<p>We offer representation services with our experienced team in areas such as unfair dismissal, severance and notice pay, overtime, mobbing, re-employment lawsuits, contract arrangements, and SSI disputes.</p>
+		<p>Our aim is to produce a fair solution balancing the rights of both the employee and the employer by preserving labor peace. We take care to resolve disputes most efficiently within the framework of preventive law.</p>
+		">
+							<span class="service-icon">
+								<img width="50" height="50" src="https://img.icons8.com/ios-filled/50/weight-care.png"
+									alt="weight-care" />
+							</span>
+							<span class="service-divider"></span>
+							<span class="service-title">Labor Law</span>
+						</a>
+		
+						<a class="service-item pro-l" data-title="Rental Law" data-desc="<p>Rental law regulates the rights and obligations arising from the contract between the tenant and the lessor. Our firm offers legal consultancy protecting the interests of parties in both residential and workplace rentals.</p>
+		<p>We provide effective services in areas such as preparation and renewal of lease agreements, determination of rental fees, eviction lawsuits, adaptation, and rent increase lawsuits.</p>
+		<p>Our goal is to place the contractual relationship between parties on solid ground, prevent potential disagreements in advance, and provide solutions as soon as possible in case of disputes.</p>
+		">
+							<span class="service-icon">
+								<img width="50" height="50" src="https://img.icons8.com/ios/50/key-exchange.png"
+									alt="key-exchange" />
+							</span>
+							<span class="service-divider"></span>
+							<span class="service-title">Rental Law</span>
+						</a>
+		
+						<a class="service-item pro-l" data-title="Inheritance Law" data-desc="<p>Inheritance law is the branch of law regulating to whom and how a person's assets will pass after their death. Since this area often becomes a subject of dispute among family members, it is a process that must be carried out meticulously.</p>
+		<p>Our firm offers comprehensive legal support to clients on issues such as division of inheritance, preparation and execution of wills, inheritance contracts, violation of reserved shares, abatement lawsuits, and refusal of inheritance.</p>
+		<p>Our aim is to prevent family disputes and ensure the inheritance is shared fairly and in accordance with the law. Throughout the process, we protect our clients' rights and produce fast and permanent solutions.</p>
+		">
+							<span class="service-icon">
+								<img width="64" height="64"
+									src="https://img.icons8.com/external-ddara-lineal-ddara/64/external-inheritance-genetics-ddara-lineal-ddara.png"
+									alt="external-inheritance-genetics-ddara-lineal-ddara" />
+							</span>
+							<span class="service-divider"></span>
+							<span class="service-title">Inheritance Law</span>
+						</a>
+		
+						<a class="service-item pro-l" data-title="Competition Law" data-desc="<p>Compliance with competition law is critically important for companies to maintain their activities in both local and global markets. Our firm represents its clients in examination, investigation, and litigation processes within the framework of competition rules.</p>
+		<p>We offer expertise in issues such as notifications to be made to the Competition Authority in mergers and acquisitions, abuse of dominant position, cartel agreements, and unfair competition lawsuits. Additionally, we prepare internal audit processes and training programs for companies to comply with competition legislation.</p>
+		<p>Our aim is to secure our clients' commercial activities within the framework of competition law, ensure they avoid potential administrative sanctions, and contribute to the protection of a fair competitive environment in the market.</p>
+		">
+							<span class="service-icon">
+								<img width="64" height="64" src="https://img.icons8.com/pastel-glyph/64/competition-arrows.png"
+									alt="competition-arrows" />
+							</span>
+							<span class="service-divider"></span>
+							<span class="service-title">Competition Law</span>
+						</a>
+		
+						<a class="service-item pro-l" data-title="Insurance Law" data-desc="<p>Insurance law is an important legal field regulating the determination of rights and debts arising from insurance contracts. Our firm offers comprehensive legal services in disputes where both the insured and insurance companies are parties.</p>
+		<p>We represent our clients with our expert team in issues such as insurance compensation lawsuits, policy cancellation, risk assessment, damage assessment, and recourse lawsuits.</p>
+		<p>Our aim is the protection of rights arising from the insurance contract and the complete compensation of damages suffered by our clients.</p>
+		">
+							<span class="service-icon">
+								<img width="64" height="64"
+									src="https://img.icons8.com/external-icongeek26-outline-icongeek26/64/external-insurance-airport-icongeek26-outline-icongeek26.png"
+									alt="external-insurance-airport-icongeek26-outline-icongeek26" />
+							</span>
+							<span class="service-divider"></span>
+							<span class="service-title">Insurance Law</span>
+						</a>
+		
+						<a class="service-item pro-l" data-title="Commercial Law" data-desc="<p>Commercial life is subject to numerous legal regulations both during the establishment stage of companies and while sustaining their activities. Our firm offers both preventive consultancy and dispute resolution services to its clients in all areas of commercial law.</p>
+		<p>We provide legal guidance on issues such as company incorporations, share transfers, board resolutions, and keeping commercial books. We act to protect our clients' interests in the preparation, negotiation, and implementation processes of commercial contracts. Detailed legal support is provided especially in agreements forming the basis of commercial life such as distributorship, dealership, supply, partnership, and franchise contracts.</p>
+		<p>In case of disputes, we represent our clients in commercial lawsuits and apply to all necessary legal remedies to protect their rights. Our aim is to ensure commercial activities are maintained uninterruptedly and in confidence, and to increase our clients' competitive power.</p>
+		">
+							<span class="service-icon">
+								<img width="50" height="50" src="https://img.icons8.com/ios/50/franchise.png" alt="franchise" />
+							</span>
+							<span class="service-divider"></span>
+							<span class="service-title">Commercial Law</span>
+						</a>
+		
+					</div>
+				</div>
+			</section>
+		</div>
+		
+		
+		
+		
 		
 		<!-- Modal -->
 		<div id="modalBox" class="modal">
@@ -402,21 +575,21 @@
 								<div class="footer-link">
 									<h4 class="h4-title footer-title">Practice Areas</h4>
 									<ul>
-										<li><a href="mediation.html" title="Professional Advice">Mediation</a></li>
-										<li><a href="mergers-and-acquisitions.html" title="Professional Advice">Mergers and
+										<li><a href="our-practice-areas.html" title="Professional Advice">Mediation</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Mergers and
 												Acquisitions</a></li>
-										<li><a href="criminal-law.html" title="Professional Advice">Criminal Law</a></li>
-										<li><a href="family-law.html" title="Professional Advice">Family Law</a></li>
-										<li><a href="bankruptcy-and-enforcement.html" title="Professional Advice">Bankruptcy and
+										<li><a href="our-practice-areas.html" title="Professional Advice">Criminal Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Family Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Bankruptcy and
 												Enforcement Law</a></li>
-										<li><a href="commercial-law.html" title="Professional Advice">Commercial Law</a></li>
-										<li><a href="inheritance-law.html" title="Professional Advice">Inheritance Law</a></li>
-										<li><a href="rental-law.html" title="Professional Advice">Lease Law</a></li>
-										<li><a href="labor-law.html" title="Professional Advice">Labor Law</a></li>
-										<li><a href="insurance-law.html" title="Professional Advice">Insurance Law</a></li>
-										<li><a href="real-estate-law.html" title="Professional Advice">Real Estate Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Commercial Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Inheritance Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Lease Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Labor Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Insurance Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Real Estate Law</a></li>
 										
-										<li><a href="competition-law.html" title="Professional Advice">Competition Law</a></li>
+										
 									</ul>
 								</div>
 							</div>
@@ -490,7 +663,7 @@
 									function shareLocation() {
 											if (navigator.share) {
 												navigator.share({
-													title: 'Yeşilköy mah. Atatürk cad. EGS Business Park B2 Blok No:12/160 Bakırköy/İstanbul',
+													title: 'Yeşilköy Mah. Atatürk Cad. EGS Business Park B2 Blok No:12/160 Bakırköy/İstanbul',
 													text: 'You can check the location here:',
 													url: 'https://maps.app.goo.gl/boXyhQueDvZJX3AH8'
 												})

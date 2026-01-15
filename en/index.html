@@ -49,7 +49,7 @@
 
 		<!-- Header Start -->
 		<header class="site-header">
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row">
 					<div class="col-12">
 						<div class="header-box">
@@ -120,24 +120,114 @@
 		</header>
 		<!-- Header End -->
 
-		<!-- Banner Start -->
-		<section class="main-banner">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="banner-content">
-						<div class="col-lg-6 align-self-center">
-							<div class="about-us-content wow" data-wow-duration="0.8s" data-wow-delay="0.2s">
+		<style>
+			/* Slider Ana Kapsayıcısı */
+			.hero-uniq-container {
+				width: 100%;
+				/* Hero yüksekliği: Ekranın %80'i kadar kaplar. */
+				height: 70vh;
+				/* Mobil gibi küçük ekranlarda çok daralmaması için minimum yükseklik */
+				min-height: 500px;
+				position: relative;
+				overflow: hidden;
+				background-color: #1a1a1a;
+				/* Resim yüklenene kadar koyu zemin */
+				margin-bottom: 30px;
+				/* Altındaki içerikle mesafe */
+			}
 		
-							
+			/* Görsellerin Ayarları */
+			.hero-uniq-img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				/* Hero alanını tamamen doldurur, taşan kısımlar kesilir, görüntü bozulmaz */
+				object-fit: cover;
+				object-position: top center;
+			}
 		
-							</div>
-						</div>
+			/* Alt kısımdaki noktaların (pagination) özelleştirilmesi */
+			/* Sadece bu slider'ı etkiler, diğerlerini bozmaz */
+			.hero-uniq-container .swiper-pagination-bullet {
+				width: 12px;
+				/* Nokta genişliği */
+				height: 12px;
+				/* Nokta yüksekliği */
+				background: #ffffff;
+				/* Beyaz renk */
+				opacity: 0.4;
+				/* Pasifken şeffaflık */
+				transition: all 0.3s ease;
+			}
 		
-					</div>
+			/* Aktif olan noktanın stili */
+			.hero-uniq-container .swiper-pagination-bullet-active {
+				opacity: 1;
+				/* Aktifken tam beyaz */
+				transform: scale(1.2);
+				/* Hafifçe büyüsün */
+			}
+		</style>
+		
+		<div class="swiper hero-uniq-container">
+			<div class="swiper-wrapper">
+		
+				<div class="swiper-slide">
+					<img src="https://storage.googleapis.com/goturkiyev2-storage/Root/health/istanbul_390x735px_hero_banner.jpg"
+						alt="Hero Görsel 1" class="hero-uniq-img">
 				</div>
+		
+				<div class="swiper-slide">
+					<img src="https://kriterdergi.com/images/news/2021/06/01/zeynelyaman.jpg" alt="Hero Görsel 2"
+						class="hero-uniq-img">
+				</div>
+		
+				<div class="swiper-slide">
+					<img src="https://queblounge.com/wp-content/uploads/2024/03/istanbul-bopshorus.jpg" alt="Hero Görsel 3"
+						class="hero-uniq-img">
+				</div>
+		
 			</div>
-		</section>
-		<!-- Banner End -->
+		
+		
+		</div>
+		
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		
+		<script>
+			// Sayfa tamamen yüklendiğinde çalıştır (Bug önleyici tedbir)
+			document.addEventListener('DOMContentLoaded', function () {
+
+				// Benzersiz değişken ismi kullanıyoruz
+				const heroSwiperUniq = new Swiper('.hero-uniq-container', {
+					// Efekt Ayarı: Fade (Solma)
+					effect: 'fade',
+					fadeEffect: {
+						crossFade: true // Yumuşak geçiş için önemli
+					},
+
+					// Temel Ayarlar
+					loop: true, // Sonsuz döngü (Sona gelince başa sarar)
+					slidesPerView: 1, // Her seferde 1 görsel
+					spaceBetween: 0, // Görseller arası boşluk yok
+					speed: 1500, // Geçiş hızı (ms) - Daha estetik olması için yavaşlattım
+
+					// Otomatik Oynatma
+					autoplay: {
+						delay: 4000, // 4 saniye bekle
+						disableOnInteraction: false, // Kullanıcı tıklasa da devam et
+					},
+
+
+
+					// DOM değişikliklerini izle (Pagination bug'ını önlemeye yardımcı olur)
+					observer: true,
+					observeParents: true,
+				});
+
+			});
+		</script>
+
 
 
 		
@@ -162,8 +252,6 @@
 					</div>
 				</div>
 			</div>
-		
-
 			<style>
 				.modal {
 					display: none;
@@ -172,12 +260,12 @@
 					left: 0;
 					width: 100%;
 					height: 100%;
-					background: rgba(0, 0, 0, .6);
+					background: rgba(0, 0, 0, 0.726);
 					justify-content: center;
 					align-items: center;
 					z-index: 9999;
 				}
-			
+		
 				.modal-content {
 					background: #fff;
 					color: #111;
@@ -185,13 +273,11 @@
 					max-width: 650px;
 					border-radius: 5px;
 				}
-			
+		
 				.modal-content p {
-			
 					color: #353535;
-			
 				}
-			
+		
 				.close {
 					position: absolute;
 					right: 20px;
@@ -202,286 +288,308 @@
 			</style>
 			<div class="case-study-slider swiper">
 				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="case-study-box">
+							<img src="https://cdn.pixabay.com/photo/2022/04/04/16/25/business-7111770_1280.jpg" width="480"
+								height="610" alt="Practice Area">
+							<div class="case-study-box-content">
+								<h4 class="h4-title">
+									<a href="birlesme-ve-devralmalar.html">
+										Mergers and Acquisitions
+									</a>
+								</h4>
+								<div class="case-study-box-text">
+									<p>Mergers and acquisition transactions are one of the most important steps in companies'
+										growth and restructuring processes. These processes consist not only of examining
+										financial statements but also carry great importance in terms of detecting legal risks,
+										complying with sectoral regulations, and correctly determining commercial
+										strategies.<br><br>Our firm provides comprehensive legal support to its clients in
+										merger and acquisition transactions. In this context, due diligence processes are
+										conducted, contracts are prepared to protect the interests of the buyer or seller, and
+										negotiations are meticulously followed. Detailed consultancy is provided especially in
+										complex multinational transactions to ensure compliance with both local legislation and
+										international regulations.<br><br>By creating a roadmap suitable for our clients'
+										strategic goals, transactions are ensured to be completed securely, quickly, and
+										effectively. Notifications and permissions required before the Competition Authority and
+										other regulatory authorities are also followed up by us, securing every stage of the
+										process legally.</p>
 		
-					<div class="case-study-slider swiper">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<div class="case-study-box">
-									<img src="vlk/birlesme-ve-devralmalar.png" width="480" height="610" alt="Practice Area">
-									<div class="case-study-box-content">
-										<h4 class="h4-title">
-											<a href="birlesme-ve-devralmalar.html">
-												Mergers & Acquisitions
-											</a>
-										</h4>
-										<div class="case-study-box-text">
-											<p>Mergers and acquisitions are among the most critical steps in company growth and restructuring processes. These
-												transactions involve not only the analysis of financial statements, but also identifying legal risks, ensuring
-												compliance with sector-specific regulations, and determining accurate commercial strategies.<br><br>Our firm
-												provides comprehensive legal support in mergers and acquisitions. We carry out due diligence processes, prepare
-												contracts that protect the interests of buyers or sellers, and closely monitor negotiations. In complex
-												multinational transactions, we offer detailed consultancy to ensure compliance with both local legislation and
-												international regulations.<br><br>We create a strategic roadmap tailored to our clients' objectives, ensuring that
-												transactions are completed safely, efficiently, and effectively. Notifications and approvals required by the
-												Competition Authority and other regulatory bodies are also followed by our team, securing every stage of the
-												process.</p>
-
-											<a href="birlesme-ve-devralmalar.html" class="arrow-btn"><i class="fas fa-arrow-right"
-													aria-hidden="true"></i></a>
-										</div>
-									</div>
+									<a href="birlesme-ve-devralmalar.html" class="arrow-btn"><i class="fas fa-arrow-right"
+											aria-hidden="true"></i></a>
 								</div>
 							</div>
-					
-							<div class="swiper-slide">
-								<div class="case-study-box">
-									<img src="vlk/arabuluculuk.png" width="480" height="610" alt="Practice Area">
-									<div class="case-study-box-content">
-										<h4 class="h4-title">
-											<a href="arabuluculuk.html">
-												Mediation
-											</a>
-										</h4>
-										<div class="case-study-box-text">
-											<p>Mediation is an alternative dispute resolution method aimed at resolving legal conflicts between parties amicably,
-												without the need for court proceedings. Our firm provides professional support in both mandatory and voluntary
-												mediation processes.<br><br>Our experienced team specializes in a wide range of disputes, including commercial
-												conflicts, employer–employee relations, consumer complaints, rental issues, and partnership disagreements, offering
-												fair and lasting solutions that protect the interests of all parties.<br><br>During mediation, we facilitate
-												communication between parties and contribute to achieving agreements in a confidential and secure environment. We
-												focus on obtaining the most efficient outcome while providing time and cost advantages for our clients.</p>
-
-											<a href="arabuluculuk.html" class="arrow-btn"><i class="fas fa-arrow-right"
-													aria-hidden="true"></i></a>
-										</div>
-									</div>
-								</div>
-							</div>
-					
-							<div class="swiper-slide">
-								<div class="case-study-box">
-									<img src="vlk/ceza-hukuku.png" width="480" height="610" alt="Practice Area">
-									<div class="case-study-box-content">
-										<h4 class="h4-title">
-											<a href="ceza-hukuku.html">
-												Criminal Law
-											</a>
-										</h4>
-										<div class="case-study-box-text">
-											<p>Criminal law is one of the most critical legal fields, directly affecting fundamental rights and freedoms. Our firm
-												supports clients at every stage of criminal proceedings, developing effective defense strategies throughout
-												investigation, prosecution, and appeal processes.<br><br>We offer expertise in a wide range of areas including
-												economic crimes, cybercrimes, corporate liability, and personal offenses. Allegations, evidence, and procedural
-												steps are examined in detail, ensuring strong defense against unjust accusations.<br><br>Protecting the rights of
-												victims is also a key priority for our firm. We pursue legal actions to ensure compensation for damages arising from
-												criminal acts and strive to achieve justice effectively.</p>
-
-											<a href="ceza-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
-													aria-hidden="true"></i></a>
-										</div>
-									</div>
-								</div>
-							</div>
-					
-							<div class="swiper-slide">
-								<div class="case-study-box">
-									<img src="vlk/aile-hukuku.png" width="480" height="610" alt="Practice Area">
-									<div class="case-study-box-content">
-										<h4 class="h4-title">
-											<a href="aile-hukuku.html">
-												Family Law
-											</a>
-										</h4>
-										<div class="case-study-box-text">
-											<p>Family law is not only a legal field but also one with strong social and emotional dimensions. In divorce, custody,
-												alimony, property division, and parentage cases, we adopt an approach that considers both legal and emotional needs
-												of our clients.<br><br>The best interests of the child are our primary concern in family disputes. We take necessary
-												legal steps to protect children's psychological and social development in custody and visitation arrangements. In
-												divorce proceedings, we produce solutions that protect the rights of both parties and minimize potential
-												conflicts.<br><br>Before litigation, we encourage amicable resolution methods such as mediation and settlement.
-												However, when disputes proceed to court, we provide strong legal representation to achieve the most just outcome for
-												our clients.</p>
-
-											<a href="aile-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
-													aria-hidden="true"></i></a>
-										</div>
-									</div>
-								</div>
-							</div>
-					
-							<div class="swiper-slide">
-								<div class="case-study-box">
-									<img src="vlk/icra-ve-iflas-hukuku.png" width="480" height="610" alt="Practice Area">
-									<div class="case-study-box-content">
-										<h4 class="h4-title">
-											<a href="icra-ve-iflas-hukuku.html">
-												Enforcement & Bankruptcy Law
-											</a>
-										</h4>
-										<div class="case-study-box-text">
-											<p>One of the most common issues in commercial relations is the inability to collect receivables. Our firm effectively
-												conducts enforcement proceedings to ensure creditors recover their rights as quickly as possible. We also provide
-												legal support for debt restructuring and the use of legal mechanisms such as concordat for debtor
-												clients.<br><br>Enforcement and bankruptcy processes include not only litigation, but also preventive consultancy
-												services. We advise on collateral provisions in contracts, mortgages, and pledge transactions to secure commercial
-												relationships.<br><br>Our firm produces legal solutions to protect company assets during bankruptcy, liquidation,
-												and concordat processes. Our goal is to minimize financial losses and help maintain sustainable commercial balance.
-											</p>
-
-											<a href="icra-ve-iflas-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
-													aria-hidden="true"></i></a>
-										</div>
-									</div>
-								</div>
-							</div>
-					
-							<div class="swiper-slide">
-								<div class="case-study-box">
-									<img src="vlk/ticaret-hukuku.png" width="480" height="610" alt="Practice Area">
-									<div class="case-study-box-content">
-										<h4 class="h4-title">
-											<a href="ticaret-hukuku.html">
-												Commercial Law
-											</a>
-										</h4>
-										<div class="case-study-box-text">
-											<p>Commercial activities are subject to numerous legal regulations both during company formation and operational stages.
-												Our firm provides preventive legal consultancy and dispute resolution services in all areas of commercial
-												law.<br><br>We offer legal guidance on company establishment, share transfers, board resolutions, and maintenance of
-												commercial books. We protect our clients’ interests in drafting, negotiating, and implementing commercial contracts,
-												including distribution, dealership, supply, partnership, and franchise agreements.<br><br>In case of disputes, we
-												represent our clients in commercial litigation and pursue all legal remedies to protect their rights. Our aim is to
-												ensure uninterrupted and secure commercial operations while strengthening our clients’ competitive position.</p>
-
-											<a href="ticaret-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
-													aria-hidden="true"></i></a>
-										</div>
-									</div>
-								</div>
-							</div>
-					
-							<div class="swiper-slide">
-								<div class="case-study-box">
-									<img src="vlk/miras-hukuku.png" width="480" height="610" alt="Practice Area">
-									<div class="case-study-box-content">
-										<h4 class="h4-title">
-											<a href="miras-hukuku.html">
-												Inheritance Law
-											</a>
-										</h4>
-										<div class="case-study-box-text">
-											<p>Inheritance law regulates how a person’s estate is transferred after death, often involving complex family dynamics
-												and disputes. Therefore, the process must be handled with precision and sensitivity.<br><br>Our firm provides
-												comprehensive legal support in inheritance distribution, will preparation and execution, inheritance agreements,
-												infringement of reserved portions, reduction (tenkis) lawsuits, and renunciation of inheritance.<br><br>Our goal is
-												to prevent family conflicts and ensure that inheritance is distributed fairly and in accordance with the law.
-												Throughout the process, we protect our clients’ rights and offer swift and lasting legal solutions.</p>
-
-											<a href="miras-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
-													aria-hidden="true"></i></a>
-										</div>
-									</div>
-								</div>
-							</div>
-					
-							<div class="swiper-slide">
-								<div class="case-study-box">
-									<img src="vlk/kira-hukuku.png" width="480" height="610" alt="Practice Area">
-									<div class="case-study-box-content">
-										<h4 class="h4-title">
-											<a href="kira-hukuku.html">
-												Lease Law
-											</a>
-										</h4>
-										<div class="case-study-box-text">
-											<p>Lease law regulates the rights and obligations arising from rental agreements between landlords and tenants. Our firm
-												provides legal consultancy for both residential and commercial leases, ensuring the protection of our clients’
-												interests.<br><br>We offer services in drafting and renewing lease agreements, determining rental amounts, eviction
-												lawsuits, adaptation actions, and rent increase disputes.<br><br>Our objective is to establish strong contractual
-												relationships, prevent potential disputes, and ensure the quickest possible resolution when conflicts arise.</p>
-
-											<a href="kira-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
-													aria-hidden="true"></i></a>
-										</div>
-									</div>
-								</div>
-							</div>
-					
-							<div class="swiper-slide">
-								<div class="case-study-box">
-									<img src="vlk/is-hukuku.png" width="480" height="610" alt="Practice Area">
-									<div class="case-study-box-content">
-										<h4 class="h4-title">
-											<a href="is-hukuku.html">
-												Labor Law
-											</a>
-										</h4>
-										<div class="case-study-box-text">
-											<p>Labor law regulates the relationship between employees and employers and forms the foundation of working life. Our
-												firm provides professional legal support for both parties in all employment-related matters.<br><br>We offer
-												representation in wrongful termination claims, severance and notice compensation, overtime disputes, mobbing cases,
-												reinstatement lawsuits, contract arrangements, and social security conflicts.<br><br>Our aim is to maintain
-												workplace harmony and produce fair solutions that balance the rights of both employees and employers. We prioritize
-												efficient dispute resolution within the framework of preventive legal practices.</p>
-
-											<a href="is-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
-													aria-hidden="true"></i></a>
-										</div>
-									</div>
-								</div>
-							</div>
-					
-							<div class="swiper-slide">
-								<div class="case-study-box">
-									<img src="vlk/sigorta-hukuku.png" width="480" height="610" alt="Practice Area">
-									<div class="case-study-box-content">
-										<h4 class="h4-title">
-											<a href="sigorta-hukuku.html">
-												Insurance Law
-											</a>
-										</h4>
-										<div class="case-study-box-text">
-											<p>Insurance law governs the rights and obligations arising from insurance contracts. Our firm provides comprehensive
-												legal services in disputes involving both insured parties and insurance companies.<br><br>We represent our clients
-												in insurance compensation claims, policy cancellations, risk assessments, damage evaluations, and recourse
-												actions.<br><br>Our objective is to protect the rights arising from insurance contracts and ensure full compensation
-												for our clients’ losses.</p>
-
-											<a href="sigorta-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
-													aria-hidden="true"></i></a>
-										</div>
-									</div>
-								</div>
-							</div>
-					
-							<div class="swiper-slide">
-								<div class="case-study-box">
-									<img src="vlk/gayrimenkul-hukuku.png" width="480" height="610" alt="Practice Area">
-									<div class="case-study-box-content">
-										<h4 class="h4-title">
-											<a href="gayrimenkul-hukuku.html">
-												Real Estate Law
-											</a>
-										</h4>
-										<div class="case-study-box-text">
-											<p>Real estate law covers all legal transactions related to immovable property. Our firm offers a wide range of
-												consultancy services, from real estate purchases and sales to urban transformation projects.<br><br>We have
-												extensive experience in title cancellation and registration lawsuits, condominium disputes, lease relationships,
-												construction contracts based on land share, and contractor receivables.<br><br>Our goal is to ensure legally
-												compliant real estate investments and protect our clients’ rights effectively in potential disputes.</p>
-
-											<a href="gayrimenkul-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
-													aria-hidden="true"></i></a>
-										</div>
-									</div>
-								</div>
-							</div>
-					
-						
-					
 						</div>
 					</div>
-
+		
+					<div class="swiper-slide">
+						<div class="case-study-box">
+							<img src="vlk/arabuluculuk.png" width="480" height="610" alt="Practice Area">
+							<div class="case-study-box-content">
+								<h4 class="h4-title">
+									<a href="arabuluculuk.html">
+										Mediation
+									</a>
+								</h4>
+								<div class="case-study-box-text">
+									<p>Mediation is an alternative dispute resolution method aiming to resolve legal disputes
+										amicably between parties without the need for court proceedings. Our firm offers
+										professional support to clients in both mandatory and voluntary mediation
+										processes.<br><br>Our team, specializing in a wide range of areas such as commercial
+										disputes, employer-employee relations, consumer complaints, lease, and partnership
+										disagreements, aims to produce fair and permanent solutions considering the interests of
+										the parties.<br><br>In the mediation process, we facilitate communication between
+										parties and contribute to reaching an agreement in a secure environment based on
+										confidentiality. In this process, which provides time and cost advantages, we focus on
+										obtaining the most efficient result while protecting our clients' rights.</p>
+									<a href="arabuluculuk.html" class="arrow-btn"><i class="fas fa-arrow-right"
+											aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<div class="swiper-slide">
+						<div class="case-study-box">
+							<img src="vlk/ceza-hukuku.png" width="480" height="610" alt="Practice Area">
+							<div class="case-study-box-content">
+								<h4 class="h4-title">
+									<a href="ceza-hukuku.html">
+										Criminal Law
+									</a>
+								</h4>
+								<div class="case-study-box-text">
+									<p>Criminal law is one of the most critical branches of law directly concerning the
+										fundamental rights and freedoms of individuals. Our firm stands by its clients at all
+										stages of criminal proceedings; developing an effective defense strategy during
+										investigation, prosecution, and appeal processes.<br><br>We offer expertise in a wide
+										spectrum such as economic crimes, cybercrimes, liabilities of company executives, or
+										personal crimes. Allegations, evidence, and procedural actions faced by our clients are
+										examined in the finest detail; an effective defense is made against unjust
+										accusations.<br><br>Additionally, protecting the rights of clients in the victim
+										position is among our firm's priority services. In this context, legal initiatives are
+										taken for the compensation of damages arising from the crime, aiming to ensure justice
+										is served most effectively.</p>
+									<a href="ceza-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
+											aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<div class="swiper-slide">
+						<div class="case-study-box">
+							<img style="object-position: bottom;"
+								src="https://cdn.pixabay.com/photo/2021/02/10/16/07/family-6002642_1280.jpg" width="480"
+								height="610" alt="Practice Area">
+							<div class="case-study-box-content">
+								<h4 class="h4-title">
+									<a href="aile-hukuku.html">
+										Family Law
+									</a>
+								</h4>
+								<div class="case-study-box-text">
+									<p>Family law is not just a legal field, but also one with a strong social and human
+										dimension. In divorce, custody, alimony, property division, and paternity cases, we
+										adopt an approach that considers both the legal and emotional needs of our
+										clients.<br><br>The best interest of the child is our primary priority in family law
+										disputes. In custody and visitation arrangements, necessary legal steps are taken to
+										protect the child's psychological and social development. In divorce processes,
+										solutions are generated to protect the parties' rights and minimize potential
+										conflicts.<br><br>Our firm brings up amicable resolution methods like mediation and
+										reconciliation before resorting to litigation. However, if disputes move to court, we
+										provide comprehensive legal representation to defend our clients' rights determinedly
+										and reach the fairest outcome.</p>
+									<a href="aile-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
+											aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<div class="swiper-slide">
+						<div class="case-study-box">
+							<img src="vlk/icra-ve-iflas-hukuku.png" width="480" height="610" alt="Practice Area">
+							<div class="case-study-box-content">
+								<h4 class="h4-title">
+									<a href="icra-ve-iflas-hukuku.html">
+										Bankruptcy and Enforcement Law
+									</a>
+								</h4>
+								<div class="case-study-box-text">
+									<p>One of the most common problems in commercial relations is the inability to collect
+										receivables. Our firm effectively carries out enforcement proceedings for creditors to
+										obtain their rights as soon as possible. Besides this, we provide legal support to
+										debtor clients regarding debt restructuring and benefiting from legal possibilities like
+										concordat.<br><br>Enforcement and bankruptcy processes consist not only of the
+										litigation stage but also cover preventive consultancy services. Consultancy is provided
+										on preventive measures such as guarantee provisions to be placed in contracts, mortgage,
+										and pledge transactions to secure our clients' commercial relations.<br><br>Our firm
+										produces legal solutions aimed at protecting company assets in processes like bankruptcy
+										postponement, liquidation, and concordat. Our goal is to help our clients maintain a
+										sustainable commercial balance by minimizing their economic losses.</p>
+									<a href="icra-ve-iflas-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
+											aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<div class="swiper-slide">
+						<div class="case-study-box">
+							<img src="vlk/ticaret-hukuku.png" width="480" height="610" alt="Practice Area">
+							<div class="case-study-box-content">
+								<h4 class="h4-title">
+									<a href="ticaret-hukuku.html">
+										Commercial Law
+									</a>
+								</h4>
+								<div class="case-study-box-text">
+									<p>Commercial life is subject to numerous legal regulations both during the establishment
+										stage of companies and while sustaining their activities. Our firm offers both
+										preventive consultancy and dispute resolution services to its clients in all areas of
+										commercial law.<br><br>We provide legal guidance on issues such as company
+										incorporations, share transfers, board resolutions, and keeping commercial books. We act
+										to protect our clients' interests in the preparation, negotiation, and implementation
+										processes of commercial contracts. Detailed legal support is provided especially in
+										agreements forming the basis of commercial life such as distributorship, dealership,
+										supply, partnership, and franchise contracts.<br><br>In case of disputes, we represent
+										our clients in commercial lawsuits and apply to all necessary legal remedies to protect
+										their rights. Our aim is to ensure commercial activities are maintained uninterruptedly
+										and in confidence, and to increase our clients' competitive power.</p>
+									<a href="ticaret-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
+											aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<div class="swiper-slide">
+						<div class="case-study-box">
+							<img src="https://cdn.pixabay.com/photo/2020/03/16/14/58/family-4937226_1280.jpg" width="480"
+								height="610" alt="Practice Area">
+							<div class="case-study-box-content">
+								<h4 class="h4-title">
+									<a href="miras-hukuku.html">
+										Inheritance Law
+									</a>
+								</h4>
+								<div class="case-study-box-text">
+									<p>Inheritance law is the branch of law regulating to whom and how a person's assets will
+										pass after their death. Since this area often becomes a subject of dispute among family
+										members, it is a process that must be carried out meticulously.<br><br>Our firm offers
+										comprehensive legal support to clients on issues such as division of inheritance,
+										preparation and execution of wills, inheritance contracts, violation of reserved shares,
+										abatement lawsuits, and refusal of inheritance.<br><br>Our aim is to prevent family
+										disputes and ensure the inheritance is shared fairly and in accordance with the law.
+										Throughout the process, we protect our clients' rights and produce fast and permanent
+										solutions.</p>
+									<a href="miras-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
+											aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<div class="swiper-slide">
+						<div class="case-study-box">
+							<img src="https://cdn.pixabay.com/photo/2019/09/30/16/00/house-4516176_1280.jpg" width="480"
+								height="610" alt="Practice Area">
+							<div class="case-study-box-content">
+								<h4 class="h4-title">
+									<a href="kira-hukuku.html">
+										Lease Law
+									</a>
+								</h4>
+								<div class="case-study-box-text">
+									<p>Lease law regulates the rights and obligations arising from the contract between the
+										tenant and the lessor. Our firm offers legal consultancy protecting the interests of
+										parties in both residential and workplace rentals.<br><br>We provide effective services
+										in areas such as preparation and renewal of lease agreements, determination of rental
+										fees, eviction lawsuits, adaptation, and rent increase lawsuits.<br><br>Our goal is to
+										place the contractual relationship between parties on solid ground, prevent potential
+										disagreements in advance, and provide solutions as soon as possible in case of disputes.
+									</p>
+									<a href="kira-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
+											aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<div class="swiper-slide">
+						<div class="case-study-box">
+							<img src="https://cdn.pixabay.com/photo/2020/11/12/16/58/worker-5736096_1280.jpg" width="480"
+								height="610" alt="Practice Area">
+							<div class="case-study-box-content">
+								<h4 class="h4-title">
+									<a href="is-hukuku.html">
+										Labor Law
+									</a>
+								</h4>
+								<div class="case-study-box-text">
+									<p>Labor law is a branch of law regulating the relationship between employee and employer
+										and forming the basis of working life. Our firm provides professional support in all
+										kinds of legal processes for both employee and employer sides.<br><br>We offer
+										representation services with our experienced team in areas such as unfair dismissal,
+										severance and notice pay, overtime, mobbing, re-employment lawsuits, contract
+										arrangements, and SSI disputes.<br><br>Our aim is to produce a fair solution balancing
+										the rights of both the employee and the employer by preserving labor peace. We take care
+										to resolve disputes most efficiently within the framework of preventive law.</p>
+									<a href="is-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
+											aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<div class="swiper-slide">
+						<div class="case-study-box">
+							<img src="https://cdn.pixabay.com/photo/2023/07/12/10/04/disability-8122197_1280.jpg" width="480"
+								height="610" alt="Practice Area">
+							<div class="case-study-box-content">
+								<h4 class="h4-title">
+									<a href="sigorta-hukuku.html">
+										Insurance Law
+									</a>
+								</h4>
+								<div class="case-study-box-text">
+									<p>Insurance law is an important legal field regulating the determination of rights and
+										debts arising from insurance contracts. Our firm offers comprehensive legal services in
+										disputes where both the insured and insurance companies are parties.<br><br>We represent
+										our clients with our expert team in issues such as insurance compensation lawsuits,
+										policy cancellation, risk assessment, damage assessment, and recourse
+										lawsuits.<br><br>Our aim is the protection of rights arising from the insurance contract
+										and the complete compensation of damages suffered by our clients.</p>
+									<a href="sigorta-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
+											aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<div class="swiper-slide">
+						<div class="case-study-box">
+							<img src="vlk/gayrimenkul-hukuku.png" width="480" height="610" alt="Practice Area">
+							<div class="case-study-box-content">
+								<h4 class="h4-title">
+									<a href="gayrimenkul-hukuku.html">
+										Real Estate Law
+									</a>
+								</h4>
+								<div class="case-study-box-text">
+									<p>Real estate law covers all kinds of legal transactions related to immovable property. Our
+										firm offers consultancy services in a wide range extending from real estate trading to
+										urban transformation projects.<br><br>We have experience in title deed cancellation and
+										registration cases, condominium disputes, lease relations, construction contracts in
+										return for land share, and contractor receivables.<br><br>Our goal is to ensure real
+										estate investments are carried out in accordance with the law and to protect our
+										clients' rights most effectively in potential disputes.</p>
+									<a href="gayrimenkul-hukuku.html" class="arrow-btn"><i class="fas fa-arrow-right"
+											aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
 		
 				</div>
 			</div>
@@ -492,14 +600,14 @@
 					style="display: flex; align-items: center; justify-content: space-between;">
 		
 					<div class="col-lg-4"
-						style="background: #31619e10; border-radius: 4px; padding: 15px; max-width:400px; border: 2px solid #31619e50;">
+						style="background: #9e313100; border-radius: 4px; padding:10px 7px; max-width:400px; border: 2px solid #9e313115;">
 						<div class="our-services-content">
 							<p style="display: flex; align-items: center; gap: 15px; color: #000; font-size: 16px;">
 								<img style="width: 50px; height: 50px; padding: 8px; background: #fff; border-radius: 50%;"
 									src="arma.png" alt="">
 								LEGISLATION INFORMATION SYSTEM
 							</p>
-							<a href="https://www.mevzuat.gov.tr/" class="link-btn" title="Explore More Services">
+							<a href="https://www.mevzuat.gov.tr/" class="link-btn" title="Visit Website">
 								<span>Visit</span>
 								<i class="fas fa-arrow-right" aria-hidden="true"></i>
 							</a>
@@ -507,15 +615,15 @@
 					</div>
 		
 					<div class="col-lg-4"
-						style="background: #9e313110; border-radius: 4px; padding: 15px; max-width:400px; border: 2px solid #9e313150;">
+						style="background: #9e313100; border-radius: 4px; padding:10px 7px; max-width:400px; border: 2px solid #9e313115;">
 						<div class="our-services-content">
 							<p style="display: flex; align-items: center; gap: 15px; color: #000; font-size: 16px;">
 								<img style="width: 50px; height: 50px; padding: 8px; background: #fff; border-radius: 50%;"
 									src="tbmm-logo.png" alt="">
-								TBMM LAW INQUIRY FORM
+								GNAT LAWS INQUIRY FORM
 							</p>
 							<a href="https://www.tbmm.gov.tr/Yasama/Kanunlar" target="_blank" class="link-btn"
-								title="Explore More Services">
+								title="Visit Website">
 								<span>Visit</span>
 								<i class="fas fa-arrow-right" aria-hidden="true"></i>
 							</a>
@@ -523,14 +631,14 @@
 					</div>
 		
 					<div class="col-lg-4"
-						style="background: #31619e10; border-radius: 4px; padding: 15px; max-width:400px; border: 2px solid #31619e50;">
+						style="background: #9e313100; border-radius: 4px; padding:10px 7px; max-width:400px; border: 2px solid #9e313115;">
 						<div class="our-services-content">
 							<p style="display: flex; align-items: center; gap: 15px; color: #000; font-size: 16px;">
 								<img style="width: 50px; height: 50px; padding: 8px; background: #fff; border-radius: 50%;"
 									src="arma.png" alt="">
-								OFFICIAL GAZETTE OF THE PRESIDENCY 
+								T.R. PRESIDENCY OFFICIAL GAZETTE
 							</p>
-							<a href="https://resmigazete.gov.tr/" class="link-btn" title="Explore More Services">
+							<a href="https://resmigazete.gov.tr/" class="link-btn" title="Visit Website">
 								<span>Visit</span>
 								<i class="fas fa-arrow-right" aria-hidden="true"></i>
 							</a>
@@ -538,6 +646,7 @@
 					</div>
 		
 				</div>
+		
 			</div>
 		</section>
 
@@ -646,6 +755,7 @@
 										<li><a href="contact.html" title="Cookie Policy">Cookie Policy</a></li>
 										<li><a href="contact.html" title="KVKK">Personal Data Protection (KVKK)</a></li>
 									</ul>
+									
 								</div>
 							</div>
 						</div>
@@ -654,23 +764,72 @@
 							<div class="footer-link-wp">
 								<div class="footer-link">
 									<h4 class="h4-title footer-title">Practice Areas</h4>
-									<ul>
-										<li><a href="mediation.html" title="Professional Advice">Mediation</a></li>
-										<li><a href="mergers-and-acquisitions.html" title="Professional Advice">Mergers and
+									<ul class="footer-modal-links">
+										<li><a href="our-practice-areas.html" title="Professional Advice">Mediation</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Mergers and
 												Acquisitions</a></li>
-										<li><a href="criminal-law.html" title="Professional Advice">Criminal Law</a></li>
-										<li><a href="family-law.html" title="Professional Advice">Family Law</a></li>
-										<li><a href="bankruptcy-and-enforcement.html" title="Professional Advice">Bankruptcy and
+										<li><a href="our-practice-areas.html" title="Professional Advice">Criminal Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Family Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Bankruptcy and
 												Enforcement Law</a></li>
-										<li><a href="commercial-law.html" title="Professional Advice">Commercial Law</a></li>
-										<li><a href="inheritance-law.html" title="Professional Advice">Inheritance Law</a></li>
-										<li><a href="rental-law.html" title="Professional Advice">Lease Law</a></li>
-										<li><a href="labor-law.html" title="Professional Advice">Labor Law</a></li>
-										<li><a href="insurance-law.html" title="Professional Advice">Insurance Law</a></li>
-										<li><a href="real-estate-law.html" title="Professional Advice">Real Estate Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Commercial Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Inheritance Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Lease Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Labor Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Insurance Law</a></li>
+										<li><a href="our-practice-areas.html" title="Professional Advice">Real Estate Law</a></li>
 										
-										<li><a href="competition-law.html" title="Professional Advice">Competition Law</a></li>
+										
 									</ul>
+									<script>
+										// Footer linklerini seçiyoruz
+										const footerLinks = document.querySelectorAll(".footer-modal-links a");
+
+										footerLinks.forEach(link => {
+											link.addEventListener("click", function (e) {
+												e.preventDefault(); // Sayfa değiştirmeyi engelle
+
+												// Tıklanan footer linkinin metnini al (Boşlukları temizle)
+												const clickedText = this.innerText.trim();
+
+												// Sayfadaki tüm içerik kutularını (case-study-box) tarayalım
+												const allBoxes = document.querySelectorAll(".case-study-box");
+												let matchFound = false;
+
+												allBoxes.forEach(box => {
+													// Kutunun başlığını bul
+													const boxTitleElement = box.querySelector("h4 a") || box.querySelector("h4");
+
+													if (boxTitleElement) {
+														const boxTitleText = boxTitleElement.innerText.trim();
+
+														// EŞLEŞME KONTROLÜ: Footer'daki yazı ile Kutudaki yazı aynı mı?
+														if (boxTitleText === clickedText) {
+
+															// Eşleşme bulundu! İçerikleri alalım
+															const descElement = box.querySelector(".case-study-box-text p");
+															const desc = descElement ? descElement.innerHTML : "İçerik bulunamadı.";
+
+															// Modala yaz
+															modalTitle.innerHTML = boxTitleText;
+															modalText.innerHTML = desc;
+
+															// Modalı aç ve scroll'u kilitle
+															modal.style.display = "flex";
+															
+
+															matchFound = true;
+														}
+													}
+												});
+
+												if (!matchFound) {
+													console.log("Hata: Bu başlığa ait bir içerik kutusu (case-study-box) bulunamadı: " + clickedText);
+													// İstersen burada "İçerik hazırlanıyor..." gibi bir uyarı da açtırabilirsin.
+												}
+											});
+										});
+									</script>
 								</div>
 							</div>
 						</div>
@@ -743,7 +902,7 @@
 									function shareLocation() {
 											if (navigator.share) {
 												navigator.share({
-													title: 'Yeşilköy mah. Atatürk cad. EGS Business Park B2 Blok No:12/160 Bakırköy/İstanbul',
+													title: 'Yeşilköy Mah. Atatürk Cad. EGS Business Park B2 Blok No:12/160 Bakırköy/İstanbul',
 													text: 'You can check the location here:',
 													url: 'https://maps.app.goo.gl/boXyhQueDvZJX3AH8'
 												})
@@ -835,11 +994,11 @@
 			link.addEventListener("click", function (e) {
 				e.preventDefault();
 
-				const title = this.closest(".case-study-box").querySelector("h4 a").innerText;
-				const desc = this.closest(".case-study-box").querySelector(".case-study-box-text p").innerText;
+				const title = this.closest(".case-study-box").querySelector("h4 a").innerHTML;
+				const desc = this.closest(".case-study-box").querySelector(".case-study-box-text p").innerHTML;
 
-				modalTitle.innerText = title;
-				modalText.innerText = desc;
+				modalTitle.innerHTML = title;
+				modalText.innerHTML = desc;
 
 				modal.style.display = "flex";
 			});
